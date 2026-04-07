@@ -1,454 +1,232 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="light" lang="tr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HEAVY-DUTY MONITOR - Fleet Overview</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Plus+Jakarta+Sans:wght@300..800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "tertiary-fixed": "#fd4e4d",
-                        "on-error": "#490106",
-                        "on-tertiary-container": "#1f0001",
-                        "surface-bright": "#002867",
-                        "on-background": "#dee5ff",
-                        "on-secondary-fixed": "#004a1d",
-                        "primary-dim": "#98b8ff",
-                        "on-primary-fixed": "#003c86",
-                        "surface-container-lowest": "#000000",
-                        "surface-container-high": "#031d4b",
-                        "tertiary-container": "#fd4e4d",
-                        "inverse-on-surface": "#4d556b",
-                        "primary": "#adc6ff",
-                        "on-primary": "#003d88",
-                        "on-primary-container": "#bdd0ff",
-                        "error-container": "#7f2927",
-                        "error-dim": "#bb5551",
-                        "background": "#060e20",
-                        "on-secondary-container": "#41da70",
-                        "on-error-container": "#ff9993",
-                        "on-surface": "#dee5ff",
-                        "on-tertiary-fixed": "#000000",
-                        "on-secondary-fixed-variant": "#006a2d",
-                        "outline-variant": "#2b4680",
-                        "secondary-container": "#00461b",
-                        "primary-fixed-dim": "#c3d4ff",
-                        "secondary-fixed": "#6bff8f",
-                        "surface-container-highest": "#00225a",
-                        "on-tertiary": "#490005",
-                        "surface-container-low": "#06122d",
-                        "tertiary-fixed-dim": "#ec4142",
-                        "primary-container": "#004395",
-                        "on-surface-variant": "#91aaeb",
-                        "on-primary-fixed-variant": "#0057bd",
-                        "surface-variant": "#00225a",
-                        "primary-fixed": "#d8e2ff",
-                        "secondary": "#0abc56",
-                        "surface-container": "#05183c",
-                        "inverse-surface": "#faf8ff",
-                        "surface-tint": "#adc6ff",
-                        "tertiary-dim": "#ff716a",
-                        "secondary-fixed-dim": "#5bf083",
-                        "on-secondary": "#002c0f",
-                        "secondary-dim": "#00b652",
-                        "tertiary": "#ff716a",
-                        "inverse-primary": "#005bc4",
-                        "surface-dim": "#060e20",
-                        "error": "#ee7d77",
-                        "surface": "#060e20",
-                        "on-tertiary-fixed-variant": "#3b0003",
-                        "outline": "#5b74b1"
-                    },
-                    fontFamily: {
-                        "headline": ["Space Grotesk"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
-                    },
-                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-                },
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#83b8a2",
+                    "outline": "#4e816d",
+                    "surface": "#d9ffed",
+                    "on-tertiary": "#f7f0ff",
+                    "on-tertiary-fixed-variant": "#4000ad",
+                    "primary-fixed": "#52f9a8",
+                    "surface-variant": "#a0eccd",
+                    "on-tertiary-fixed": "#1c0055",
+                    "on-primary": "#caffdb",
+                    "secondary-fixed-dim": "#ffafaa",
+                    "on-secondary-fixed-variant": "#a60018",
+                    "background": "#d9ffed",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-dim": "#5819db",
+                    "secondary-dim": "#a40018",
+                    "tertiary-fixed": "#b8a3ff",
+                    "surface-container-low": "#c1fee3",
+                    "surface-container-high": "#aaf1d3",
+                    "surface-container-highest": "#a0eccd",
+                    "primary-container": "#52f9a8",
+                    "on-primary-fixed-variant": "#00653e",
+                    "surface-tint": "#006940",
+                    "on-secondary-container": "#940014",
+                    "secondary": "#b61321",
+                    "tertiary": "#652fe7",
+                    "on-primary-container": "#005a37",
+                    "on-surface": "#003627",
+                    "primary-dim": "#005c38",
+                    "on-error": "#ffefee",
+                    "inverse-on-surface": "#73a892",
+                    "surface-dim": "#92e5c4",
+                    "secondary-fixed": "#ffc3be",
+                    "on-error-container": "#570008",
+                    "on-primary-fixed": "#004529",
+                    "error-dim": "#9f0519",
+                    "on-surface-variant": "#326552",
+                    "on-background": "#003627",
+                    "on-secondary-fixed": "#70000d",
+                    "on-tertiary-container": "#370096",
+                    "surface-container": "#b4f6da",
+                    "error-container": "#fb5151",
+                    "tertiary-fixed-dim": "#ab93ff",
+                    "tertiary-container": "#b8a3ff",
+                    "inverse-surface": "#00120b",
+                    "error": "#b31b25",
+                    "surface-bright": "#d9ffed",
+                    "secondary-container": "#ffc3be",
+                    "on-secondary": "#ffefee",
+                    "primary-fixed-dim": "#3eea9b",
+                    "inverse-primary": "#52f9a8",
+                    "primary": "#006940"
             },
-        }
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
     </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
         }
-        .sparkline-container svg {
-            filter: drop-shadow(0 0 4px currentColor);
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
     </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
 </head>
-<body class="bg-background text-on-background font-body selection:bg-primary/30">
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 h-16 bg-[#060e20] flex justify-between items-center px-6 overflow-hidden border-none shadow-none">
-<div class="flex items-center gap-8">
-<span class="text-xl font-bold tracking-tighter text-[#adc6ff] font-headline uppercase">HEAVY-DUTY MONITOR</span>
-<div class="hidden md:flex items-center bg-surface-container-high rounded px-3 py-1.5 gap-2 border border-outline-variant/20">
-<span class="material-symbols-outlined text-[#adc6ff] text-sm">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-xs font-['Space_Grotesk'] tracking-tight text-[#adc6ff] placeholder:text-[#91aaeb]/50 w-48 uppercase" placeholder="SEARCH SENSORS..." type="text"/>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky z-40 bg-[#d9ffed] dark:bg-emerald-950/20 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<img alt="Mascot" data-alt="A sarcastic cartoonish 3D emoji mascot of a wealthy person wearing monocle and a green suit, whimsical and stylized" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPnHPeXWFXRj-tqGnH-4qMBkqJlTVO4G9DLfPqSxfUlwoIV-h4HQVh55XXbCefU2XHNCLYWzHMmK689cMC2_Do-T7SY-UKSK8mSEU2qhX3WZWt1faFulcv1CrKmEk1iIE6T_9RdIUkATZS3tlpgNQn66844m8Kx0m2hLJYCSugwQh9gXhG_xdP-AHdUvwaM87201FR5nX0e80Oz-bwNZsstFii8H7tb_1fPLG4u98nT9nHp_rYTc6ddFIzF2HjDynHOx1VfowMt5A"/>
 </div>
+<span class="text-2xl font-bold text-[#006940] dark:text-[#52f9a8] font-['Space_Grotesk'] tracking-tight">Ekonomi Abi</span>
 </div>
 <div class="flex items-center gap-4">
-<!-- Data Mode Switch -->
-<div class="flex bg-surface-container-highest p-1 rounded-sm gap-1">
-<button class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-primary text-on-primary rounded-sm transition-all">Simulation Mode</button>
-<button class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#91aaeb] hover:bg-[#00225a] rounded-sm transition-all">SCADA Mode</button>
-</div>
-<div class="flex items-center gap-1">
-<div class="relative p-2 hover:bg-[#00225a] transition-colors duration-200 cursor-pointer active:scale-95 rounded">
-<span class="material-symbols-outlined text-[#adc6ff]">notifications</span>
-<span class="absolute top-1 right-1 w-4 h-4 bg-tertiary text-on-tertiary text-[9px] font-black flex items-center justify-center rounded-full">2</span>
-</div>
-<div class="p-2 hover:bg-[#00225a] transition-colors duration-200 cursor-pointer active:scale-95 rounded">
-<span class="material-symbols-outlined text-[#adc6ff]">settings</span>
-</div>
-<div class="p-2 hover:bg-[#00225a] transition-colors duration-200 cursor-pointer active:scale-95 rounded">
-<span class="material-symbols-outlined text-[#adc6ff]">sensors</span>
-</div>
-</div>
-<div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
-<div class="flex items-center gap-3 pl-2">
-<img alt="Operator Profile" class="w-8 h-8 rounded-full border border-primary/30" data-alt="Close-up professional portrait of a technical industrial systems operator wearing tactical headset in a dimly lit control room environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTalURaFD4bhWtDzdoe79e8irQECIaGXQCTlm9m6PWSmxwSUTRGM7otJLxT38v3hgpceXJ3PRHWZyl5-32XBgMBzYbqWrg11_bBF29gW9qzZ23VQe2MiBx1uLjLl3jHD6xi2Mm566y2Zh2PO2bUnxvRpz3xzN_2e6Y6zHz8fTeOoWKsDVLNrfNZOKHt0l9_3EJO4ioO5btonh_vT0ANAsT8eZp6N_jZ1pL2kmqDnu9_qhJSyGS_wmN_OiTboE3osURRJexsNDNmaZD"/>
-<div class="hidden lg:block text-right">
-<p class="text-[10px] font-bold text-primary tracking-widest uppercase">Operator-04</p>
-<p class="text-[9px] text-on-surface-variant font-medium uppercase">Level 4 Clearance</p>
-</div>
-</div>
+<span class="material-symbols-outlined text-[#006940] dark:text-[#52f9a8] text-2xl">face</span>
 </div>
 </header>
-<!-- SideNavBar -->
-<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 z-40 bg-[#06122d] border-r border-[#2b4680]/15 flex flex-col py-4 shadow-2xl shadow-black/40">
-<div class="px-6 mb-8">
-<h2 class="text-lg font-black text-white font-headline tracking-tighter">CONTROL UNIT</h2>
-<p class="font-['Inter'] font-medium text-[10px] tracking-wider uppercase text-on-surface-variant">Station ID: 77-Alpha</p>
+<main class="px-6 pt-8 max-w-2xl mx-auto">
+<!-- Hero / Mascot Section -->
+<section class="mb-12 relative">
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_20px_40px_rgba(0,54,39,0.08)] relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">account_balance_wallet</span>
 </div>
-<nav class="flex-1 space-y-1">
-<a class="bg-[#00225a] text-[#adc6ff] border-r-4 border-[#adc6ff] flex items-center gap-3 px-6 py-4 cursor-pointer active:bg-[#004395] transition-all duration-150" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-<span class="font-['Inter'] font-medium text-xs tracking-wider uppercase">Fleet Overview</span>
+<h1 class="text-4xl md:text-5xl font-bold font-headline leading-none mb-4 text-primary tracking-tighter">Sırlarını anlat...</h1>
+<p class="text-on-surface-variant font-medium text-lg leading-relaxed max-w-md">...yoksa banka hesabın anlatacak. Bakalım o paralar her ay nereye kayboluyor?</p>
+<div class="mt-6 inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full font-bold text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+                    Sarcastic analysis ahead
+                </div>
+</div>
+</section>
+<!-- Input Bento Grid -->
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Salary (Large Card) -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-lg flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<label class="font-headline font-bold text-2xl tracking-tight text-primary">Aylık Maaş</label>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div class="relative">
+<span class="absolute left-0 bottom-3 text-4xl font-headline font-bold text-primary opacity-30">₺</span>
+<input class="w-full bg-transparent border-b-2 border-primary outline-none py-2 pl-8 text-4xl font-headline font-bold placeholder:text-surface-variant focus:border-tertiary transition-colors appearance-none" placeholder="0.00" type="number"/>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">How much do you make before taxes and tears?</p>
+</div>
+<!-- Rent -->
+<div class="bg-surface-container p-6 rounded-lg flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">home</span>
+<label class="font-headline font-bold uppercase tracking-widest text-xs opacity-70">Kira</label>
+</div>
+<input class="w-full bg-surface-container-low rounded-xl px-4 py-4 font-headline font-bold text-xl outline-none focus:bg-surface-container-lowest transition-all" placeholder="₺0" type="number"/>
+</div>
+<!-- Groceries -->
+<div class="bg-surface-container p-6 rounded-lg flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shopping_basket</span>
+<label class="font-headline font-bold uppercase tracking-widest text-xs opacity-70">Market Gideri</label>
+</div>
+<input class="w-full bg-surface-container-low rounded-xl px-4 py-4 font-headline font-bold text-xl outline-none focus:bg-surface-container-lowest transition-all" placeholder="₺0" type="number"/>
+</div>
+<!-- Transportation -->
+<div class="bg-surface-container p-6 rounded-lg flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+<label class="font-headline font-bold uppercase tracking-widest text-xs opacity-70">Ulaşım / Benzin</label>
+</div>
+<input class="w-full bg-surface-container-low rounded-xl px-4 py-4 font-headline font-bold text-xl outline-none focus:bg-surface-container-lowest transition-all" placeholder="₺0" type="number"/>
+</div>
+<!-- Bills -->
+<div class="bg-surface-container p-6 rounded-lg flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+<label class="font-headline font-bold uppercase tracking-widest text-xs opacity-70">Faturalar</label>
+</div>
+<input class="w-full bg-surface-container-low rounded-xl px-4 py-4 font-headline font-bold text-xl outline-none focus:bg-surface-container-lowest transition-all" placeholder="₺0" type="number"/>
+</div>
+<!-- Debt -->
+<div class="bg-secondary-container/30 p-6 rounded-lg flex flex-col gap-3 group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">account_balance</span>
+<label class="font-headline font-bold uppercase tracking-widest text-xs text-secondary opacity-70">Kredi</label>
+</div>
+<input class="w-full bg-surface-container-lowest/50 rounded-xl px-4 py-4 font-headline font-bold text-xl text-secondary outline-none focus:bg-surface-container-lowest transition-all" placeholder="₺0" type="number"/>
+</div>
+<div class="bg-secondary-container/30 p-6 rounded-lg flex flex-col gap-3 group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">credit_card</span>
+<label class="font-headline font-bold uppercase tracking-widest text-xs text-secondary opacity-70">Kredi Kartı</label>
+</div>
+<input class="w-full bg-surface-container-lowest/50 rounded-xl px-4 py-4 font-headline font-bold text-xl text-secondary outline-none focus:bg-surface-container-lowest transition-all" placeholder="₺0" type="number"/>
+<p class="text-[10px] font-bold text-secondary uppercase opacity-60">Abi's watching these ones closely.</p>
+</div>
+<!-- Coffee -->
+<div class="bg-tertiary-container/20 p-6 rounded-lg flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">coffee</span>
+<label class="font-headline font-bold uppercase tracking-widest text-xs text-tertiary opacity-70">Aylık Kahve</label>
+</div>
+<input class="w-full bg-surface-container-lowest/50 rounded-xl px-4 py-4 font-headline font-bold text-xl text-tertiary outline-none focus:bg-surface-container-lowest transition-all" placeholder="₺0" type="number"/>
+</div>
+<!-- Other -->
+<div class="md:col-span-2 bg-surface-container p-6 rounded-lg flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">more_horiz</span>
+<label class="font-headline font-bold uppercase tracking-widest text-xs opacity-70">Diğer Giderler</label>
+</div>
+<input class="w-full bg-surface-container-low rounded-xl px-4 py-4 font-headline font-bold text-xl outline-none focus:bg-surface-container-lowest transition-all" placeholder="₺0" type="number"/>
+</div>
+<!-- CTA Button -->
+<div class="md:col-span-2 pt-8 pb-12">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-6 rounded-xl font-headline font-black text-2xl uppercase tracking-tighter shadow-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-4 group" type="submit">
+                    Ekonomi Abi Hesaplasın
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">rocket_launch</span>
+</button>
+<p class="text-center mt-4 text-on-surface-variant font-medium text-sm italic opacity-60">
+                    Warning: May cause spontaneous realization of poor life choices.
+                </p>
+</div>
+</form>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-2 bg-[#b4f6da]/70 backdrop-blur-xl dark:bg-emerald-900/80 rounded-t-[2rem] shadow-[0_-10px_30px_rgba(0,105,64,0.05)]">
+<!-- Input (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#006940] text-[#52f9a8] rounded-full p-3 mb-2 transform -translate-y-2 scale-110 duration-200 ease-out" href="{{DATA:SCREEN:SCREEN_8}}">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">Input</span>
 </a>
-<a class="flex items-center gap-3 px-6 py-4 text-[#91aaeb] hover:bg-[#00225a]/50 hover:text-white transition-all duration-150 cursor-pointer active:bg-[#004395]" href="#">
-<span class="material-symbols-outlined">precision_manufacturing</span>
-<span class="font-['Inter'] font-medium text-xs tracking-wider uppercase">Engine Fleet</span>
+<!-- Analysis -->
+<a class="flex flex-col items-center justify-center text-[#006940] opacity-70 p-2 hover:opacity-100 transition-opacity" href="{{DATA:SCREEN:SCREEN_6}}">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">Analysis</span>
 </a>
-<a class="flex items-center gap-3 px-6 py-4 text-[#91aaeb] hover:bg-[#00225a]/50 hover:text-white transition-all duration-150 cursor-pointer active:bg-[#004395]" href="#">
-<span class="material-symbols-outlined">health_and_safety</span>
-<span class="font-['Inter'] font-medium text-xs tracking-wider uppercase">System Health</span>
-</a>
-<a class="flex items-center gap-3 px-6 py-4 text-[#91aaeb] hover:bg-[#00225a]/50 hover:text-white transition-all duration-150 cursor-pointer active:bg-[#004395]" href="#">
-<span class="material-symbols-outlined">terminal</span>
-<span class="font-['Inter'] font-medium text-xs tracking-wider uppercase">Logs</span>
+<!-- Breakdown -->
+<a class="flex flex-col items-center justify-center text-[#006940] opacity-70 p-2 hover:opacity-100 transition-opacity" href="{{DATA:SCREEN:SCREEN_2}}">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">Breakdown</span>
 </a>
 </nav>
-<footer class="mt-auto pb-4">
-<a class="flex items-center gap-3 px-6 py-3 text-[#91aaeb] hover:bg-[#00225a]/50 hover:text-white transition-all duration-150" href="#">
-<span class="material-symbols-outlined text-sm">settings</span>
-<span class="font-['Inter'] font-medium text-[10px] tracking-wider uppercase">Settings</span>
-</a>
-<a class="flex items-center gap-3 px-6 py-3 text-[#91aaeb] hover:bg-[#00225a]/50 hover:text-white transition-all duration-150" href="#">
-<span class="material-symbols-outlined text-sm">help</span>
-<span class="font-['Inter'] font-medium text-[10px] tracking-wider uppercase">Support</span>
-</a>
-</footer>
-</aside>
-<!-- Main Content -->
-<main class="ml-64 mt-16 p-6 min-h-screen">
-<!-- Critical Fleet Alert Banner -->
-<div class="mb-6 animate-pulse">
-<div class="bg-tertiary-container border-l-4 border-tertiary text-on-tertiary-container px-6 py-3 flex items-center justify-between shadow-lg shadow-tertiary/10">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
-<span class="font-headline font-bold text-sm tracking-tight uppercase">FLEET ALERT: 2 ENGINES AT CRITICAL CONDENSATION RISK (DELTA T &lt; 5°C)</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="text-[10px] font-bold uppercase tracking-widest border border-on-tertiary-container/20 px-2 py-0.5">Urgent Intervention Required</span>
-</div>
-</div>
-</div>
-<!-- Dashboard Header -->
-<div class="flex justify-between items-end mb-8">
-<div>
-<h1 class="text-3xl font-black text-white font-headline tracking-tighter uppercase mb-1">Fleet Operations</h1>
-<p class="text-on-surface-variant font-medium text-xs tracking-widest uppercase">Condensation monitoring: <span class="text-tertiary font-bold">Active Risks</span> | Safe: ΔT &gt; 10°C</p>
-</div>
-<div class="flex gap-4">
-<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 border border-outline-variant/10">
-<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#0abc56]"></div>
-<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">9 Safe</span>
-</div>
-<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 border border-outline-variant/10">
-<div class="w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_8px_#eab308]"></div>
-<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">1 Warning</span>
-</div>
-<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 border border-outline-variant/10">
-<div class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#ff716a]"></div>
-<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">2 Critical</span>
-</div>
-</div>
-</div>
-<!-- Engine Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-<!-- Critical Engine Card 1 -->
-<div class="bg-surface-container-low p-5 relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300 border border-tertiary/20 shadow-xl shadow-black/20">
-<div class="absolute top-0 right-0 p-2">
-<div class="px-2 py-0.5 bg-tertiary text-on-tertiary text-[9px] font-black uppercase tracking-widest">Critical</div>
-</div>
-<div class="mb-4">
-<h3 class="text-lg font-bold text-white font-headline uppercase tracking-tight">V12-EX-001</h3>
-<p class="text-[10px] text-on-surface-variant font-medium uppercase tracking-wider">Unit Alpha-01</p>
-</div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div>
-<p class="text-[9px] text-on-surface-variant uppercase tracking-widest mb-1 font-bold">Delta T</p>
-<div class="flex items-baseline gap-1">
-<span class="text-2xl font-black text-tertiary font-headline tabular-nums">2.8</span>
-<span class="text-xs font-bold text-tertiary/70">°C</span>
-</div>
-</div>
-<div class="text-right">
-<div class="text-[9px] text-on-surface-variant/70 uppercase">Tcharge: <span class="text-white font-bold">42.2°C</span></div>
-<div class="text-[9px] text-on-surface-variant/70 uppercase">Dew Pt: <span class="text-white font-bold">39.4°C</span></div>
-</div>
-</div>
-<div class="mb-4">
-<p class="text-[9px] leading-tight text-tertiary font-bold uppercase tracking-tight">Critical: Condensation risk due to low temperature margin between Tcharge and dew point</p>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-tertiary w-[95%] shadow-[0_0_8px_#ff716a]"></div>
-</div>
-</div>
-<!-- Critical Engine Card 2 -->
-<div class="bg-surface-container-low p-5 relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300 border border-tertiary/20 shadow-xl shadow-black/20">
-<div class="absolute top-0 right-0 p-2">
-<div class="px-2 py-0.5 bg-tertiary text-on-tertiary text-[9px] font-black uppercase tracking-widest">Critical</div>
-</div>
-<div class="mb-4">
-<h3 class="text-lg font-bold text-white font-headline uppercase tracking-tight">V12-EX-009</h3>
-<p class="text-[10px] text-on-surface-variant font-medium uppercase tracking-wider">Unit Gamma-02</p>
-</div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div>
-<p class="text-[9px] text-on-surface-variant uppercase tracking-widest mb-1 font-bold">Delta T</p>
-<div class="flex items-baseline gap-1">
-<span class="text-2xl font-black text-tertiary font-headline tabular-nums">3.1</span>
-<span class="text-xs font-bold text-tertiary/70">°C</span>
-</div>
-</div>
-<div class="text-right">
-<div class="text-[9px] text-on-surface-variant/70 uppercase">Tcharge: <span class="text-white font-bold">41.5°C</span></div>
-<div class="text-[9px] text-on-surface-variant/70 uppercase">Dew Pt: <span class="text-white font-bold">38.4°C</span></div>
-</div>
-</div>
-<div class="mb-4">
-<p class="text-[9px] leading-tight text-tertiary font-bold uppercase tracking-tight">Critical: Condensation risk due to low temperature margin between Tcharge and dew point</p>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-tertiary w-[92%] shadow-[0_0_8px_#ff716a]"></div>
-</div>
-</div>
-<!-- Warning Engine Card (Yellow) -->
-<div class="bg-surface-container-low p-5 relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300 border border-yellow-500/20 shadow-xl shadow-black/20">
-<div class="absolute top-0 right-0 p-2">
-<div class="px-2 py-0.5 bg-yellow-500 text-black text-[9px] font-black uppercase tracking-widest">Warning</div>
-</div>
-<div class="mb-4">
-<h3 class="text-lg font-bold text-white font-headline uppercase tracking-tight">V12-EX-004</h3>
-<p class="text-[10px] text-on-surface-variant font-medium uppercase tracking-wider">Unit Delta-01</p>
-</div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div>
-<p class="text-[9px] text-on-surface-variant uppercase tracking-widest mb-1 font-bold">Delta T</p>
-<div class="flex items-baseline gap-1">
-<span class="text-2xl font-black text-yellow-500 font-headline tabular-nums">7.4</span>
-<span class="text-xs font-bold text-yellow-500/70">°C</span>
-</div>
-</div>
-<div class="text-right">
-<div class="text-[9px] text-on-surface-variant/70 uppercase">Tcharge: <span class="text-white font-bold">45.8°C</span></div>
-<div class="text-[9px] text-on-surface-variant/70 uppercase">Dew Pt: <span class="text-white font-bold">38.4°C</span></div>
-</div>
-</div>
-<div class="mb-4">
-<p class="text-[9px] leading-tight text-yellow-500 font-bold uppercase tracking-tight flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">trending_down</span>
-                        Warning: Delta T decreasing – condensation risk increasing
-                    </p>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-yellow-500 w-[65%]"></div>
-</div>
-</div>
-<!-- Nominal Engines (Safe > 10°C) -->
-<div class="bg-surface-container-low p-5 relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300 border border-outline-variant/10 shadow-xl shadow-black/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4">
-<h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-002</h3>
-<p class="text-[10px] text-on-surface-variant uppercase">Unit Alpha-02</p>
-</div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div>
-<p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p>
-<div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">14.2</span><span class="text-xs font-bold text-secondary/70">°C</span></div>
-</div>
-<div class="text-right text-[9px] text-on-surface-variant/70">
-<div>Tcharge: <span class="text-white font-bold">52.4°C</span></div>
-<div>Dew Pt: <span class="text-white font-bold">38.2°C</span></div>
-</div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[40%]"></div></div>
-</div>
-<!-- Engine 5 -->
-<div class="bg-surface-container-low p-5 relative group hover:bg-surface-container-high transition-all border border-outline-variant/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4"><h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-003</h3><p class="text-[10px] text-on-surface-variant uppercase">Unit Beta-01</p></div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div><p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p><div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">18.7</span><span class="text-xs font-bold text-secondary/70">°C</span></div></div>
-<div class="text-right text-[9px] text-on-surface-variant/70"><div>Tcharge: <span class="text-white font-bold">55.8°C</span></div><div>Dew Pt: <span class="text-white font-bold">37.1°C</span></div></div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[30%]"></div></div>
-</div>
-<!-- Engine 6 -->
-<div class="bg-surface-container-low p-5 relative group hover:bg-surface-container-high transition-all border border-outline-variant/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4"><h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-005</h3><p class="text-[10px] text-on-surface-variant uppercase">Unit Delta-02</p></div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div><p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p><div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">21.1</span><span class="text-xs font-bold text-secondary/70">°C</span></div></div>
-<div class="text-right text-[9px] text-on-surface-variant/70"><div>Tcharge: <span class="text-white font-bold">60.2°C</span></div><div>Dew Pt: <span class="text-white font-bold">39.1°C</span></div></div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[25%]"></div></div>
-</div>
-<!-- Engine 7 -->
-<div class="bg-surface-container-low p-5 relative group hover:bg-surface-container-high transition-all border border-outline-variant/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4"><h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-006</h3><p class="text-[10px] text-on-surface-variant uppercase">Unit Epsilon-01</p></div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div><p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p><div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">12.5</span><span class="text-xs font-bold text-secondary/70">°C</span></div></div>
-<div class="text-right text-[9px] text-on-surface-variant/70"><div>Tcharge: <span class="text-white font-bold">50.5°C</span></div><div>Dew Pt: <span class="text-white font-bold">38.0°C</span></div></div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[45%]"></div></div>
-</div>
-<!-- Engine 8 -->
-<div class="bg-surface-container-low p-5 relative group hover:bg-surface-container-high transition-all border border-outline-variant/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4"><h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-007</h3><p class="text-[10px] text-on-surface-variant uppercase">Unit Epsilon-02</p></div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div><p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p><div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">24.9</span><span class="text-xs font-bold text-secondary/70">°C</span></div></div>
-<div class="text-right text-[9px] text-on-surface-variant/70"><div>Tcharge: <span class="text-white font-bold">64.4°C</span></div><div>Dew Pt: <span class="text-white font-bold">39.5°C</span></div></div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[15%]"></div></div>
-</div>
-<!-- Engine 9 -->
-<div class="bg-surface-container-low p-5 relative group hover:bg-surface-container-high transition-all border border-outline-variant/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4"><h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-008</h3><p class="text-[10px] text-on-surface-variant uppercase">Unit Zeta-01</p></div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div><p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p><div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">11.2</span><span class="text-xs font-bold text-secondary/70">°C</span></div></div>
-<div class="text-right text-[9px] text-on-surface-variant/70"><div>Tcharge: <span class="text-white font-bold">49.4°C</span></div><div>Dew Pt: <span class="text-white font-bold">38.2°C</span></div></div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[50%]"></div></div>
-</div>
-<!-- Engine 10 -->
-<div class="bg-surface-container-low p-5 relative group hover:bg-surface-container-high transition-all border border-outline-variant/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4"><h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-010</h3><p class="text-[10px] text-on-surface-variant uppercase">Unit Eta-01</p></div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div><p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p><div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">15.3</span><span class="text-xs font-bold text-secondary/70">°C</span></div></div>
-<div class="text-right text-[9px] text-on-surface-variant/70"><div>Tcharge: <span class="text-white font-bold">54.3°C</span></div><div>Dew Pt: <span class="text-white font-bold">39.0°C</span></div></div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[35%]"></div></div>
-</div>
-<!-- Engine 11 -->
-<div class="bg-surface-container-low p-5 relative group hover:bg-surface-container-high transition-all border border-outline-variant/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4"><h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-011</h3><p class="text-[10px] text-on-surface-variant uppercase">Unit Eta-02</p></div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div><p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p><div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">13.8</span><span class="text-xs font-bold text-secondary/70">°C</span></div></div>
-<div class="text-right text-[9px] text-on-surface-variant/70"><div>Tcharge: <span class="text-white font-bold">52.2°C</span></div><div>Dew Pt: <span class="text-white font-bold">38.4°C</span></div></div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[42%]"></div></div>
-</div>
-<!-- Engine 12 -->
-<div class="bg-surface-container-low p-5 relative group hover:bg-surface-container-high transition-all border border-outline-variant/10">
-<div class="absolute top-0 right-0 p-2"><div class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-black uppercase tracking-widest">Safe</div></div>
-<div class="mb-4"><h3 class="text-lg font-bold text-white font-headline uppercase">V12-EX-012</h3><p class="text-[10px] text-on-surface-variant uppercase">Unit Theta-01</p></div>
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div><p class="text-[9px] text-on-surface-variant uppercase mb-1 font-bold">Delta T</p><div class="flex items-baseline gap-1"><span class="text-2xl font-black text-secondary font-headline tabular-nums">17.1</span><span class="text-xs font-bold text-secondary/70">°C</span></div></div>
-<div class="text-right text-[9px] text-on-surface-variant/70"><div>Tcharge: <span class="text-white font-bold">56.1°C</span></div><div>Dew Pt: <span class="text-white font-bold">39.0°C</span></div></div>
-</div>
-<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary w-[32%]"></div></div>
-</div>
-</div>
-<!-- System Log Sneak Peek -->
-<div class="mt-12">
-<h2 class="text-xs font-black text-on-surface-variant tracking-[0.2em] uppercase mb-4 flex items-center gap-2">
-<span class="w-1 h-3 bg-primary"></span>
-                Condensation Telemetry Stream
-            </h2>
-<div class="bg-surface-container-low border border-outline-variant/10 overflow-hidden">
-<table class="w-full text-left text-[11px] font-medium tracking-tight">
-<thead class="bg-surface-container text-on-surface-variant font-bold uppercase tracking-widest">
-<tr>
-<th class="px-6 py-3">Timestamp</th>
-<th class="px-6 py-3">Machine ID</th>
-<th class="px-6 py-3">Tcharge (°C)</th>
-<th class="px-6 py-3">Ambient (°C)</th>
-<th class="px-6 py-3">RH (%)</th>
-<th class="px-6 py-3">Dew Point (°C)</th>
-<th class="px-6 py-3">Delta T (°C)</th>
-<th class="px-6 py-3 text-right">Status</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-outline-variant/5">
-<tr class="hover:bg-surface-container-highest/30 transition-colors">
-<td class="px-6 py-3 text-on-surface-variant/70 tabular-nums">14:22:01.034</td>
-<td class="px-6 py-3 font-bold text-primary">V12-EX-001</td>
-<td class="px-6 py-3 tabular-nums text-white">42.2</td>
-<td class="px-6 py-3 tabular-nums text-white">40.5</td>
-<td class="px-6 py-3 tabular-nums text-white">92%</td>
-<td class="px-6 py-3 tabular-nums text-white">39.4</td>
-<td class="px-6 py-3 tabular-nums text-tertiary font-black">2.8</td>
-<td class="px-6 py-3 text-right"><span class="px-2 py-0.5 bg-tertiary text-on-tertiary text-[9px] font-bold uppercase">Critical</span></td>
-</tr>
-<tr class="bg-surface-container-low/50 hover:bg-surface-container-highest/30 transition-colors">
-<td class="px-6 py-3 text-on-surface-variant/70 tabular-nums">14:21:58.912</td>
-<td class="px-6 py-3 font-bold text-primary">V12-EX-004</td>
-<td class="px-6 py-3 tabular-nums text-white">45.8</td>
-<td class="px-6 py-3 tabular-nums text-white">39.8</td>
-<td class="px-6 py-3 tabular-nums text-white">88%</td>
-<td class="px-6 py-3 tabular-nums text-white">38.4</td>
-<td class="px-6 py-3 tabular-nums text-yellow-500 font-black">7.4</td>
-<td class="px-6 py-3 text-right"><span class="px-2 py-0.5 bg-yellow-500 text-black text-[9px] font-bold uppercase">Warning</span></td>
-</tr>
-<tr class="hover:bg-surface-container-highest/30 transition-colors">
-<td class="px-6 py-3 text-on-surface-variant/70 tabular-nums">14:21:55.221</td>
-<td class="px-6 py-3 font-bold text-primary">V12-EX-009</td>
-<td class="px-6 py-3 tabular-nums text-white">41.5</td>
-<td class="px-6 py-3 tabular-nums text-white">39.2</td>
-<td class="px-6 py-3 tabular-nums text-white">94%</td>
-<td class="px-6 py-3 tabular-nums text-white">38.4</td>
-<td class="px-6 py-3 tabular-nums text-tertiary font-black">3.1</td>
-<td class="px-6 py-3 text-right"><span class="px-2 py-0.5 bg-tertiary text-on-tertiary text-[9px] font-bold uppercase">Critical</span></td>
-</tr>
-<tr class="bg-surface-container-low/50 hover:bg-surface-container-highest/30 transition-colors">
-<td class="px-6 py-3 text-on-surface-variant/70 tabular-nums">14:21:52.118</td>
-<td class="px-6 py-3 font-bold text-primary">V12-EX-002</td>
-<td class="px-6 py-3 tabular-nums text-white">52.4</td>
-<td class="px-6 py-3 tabular-nums text-white">38.5</td>
-<td class="px-6 py-3 tabular-nums text-white">82%</td>
-<td class="px-6 py-3 tabular-nums text-white">38.2</td>
-<td class="px-6 py-3 tabular-nums text-secondary font-black">14.2</td>
-<td class="px-6 py-3 text-right"><span class="px-2 py-0.5 bg-secondary text-on-secondary text-[9px] font-bold uppercase">Safe</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</main>
 </body></html>
