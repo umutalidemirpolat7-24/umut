@@ -1,5 +1,6 @@
 <html class="scroll-smooth" lang="pt-BR"><head></head><body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">```html
 
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Rio Concierge | Descoberta de Encontros Curados</title>
@@ -339,193 +340,47 @@
 </footer>
 <script>
     let appMode = 'planner';
+    let selectedMoods = [];
+    let selectedBudget = null;
 
     const seedPlaces = [
-        { 
-            id: "cristo", 
-            name: "Cristo Redentor", 
-            district: "Flamengo / Catete", 
-            type: "Vista Panorâmica", 
-            moods: ["com_vista", "romantico", "cultural", "espontaneo"], 
-            budget: "medio", 
-            energy: "Majestosa", 
-            shortDesc: "Uma das sete maravilhas do mundo moderno, oferecendo a vista mais icônica do Rio.", 
-            img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=2070", 
-            highlights: ["Vista 360º", "Histórico", "Ícone Mundial"], 
-            priorityScore: 10,
-            audienceFit: "culture_date",
-            checkins: [{ initials: "RJ", desc: 'Visitante, "inesquecível"' }],
-            comments: ["O visual é de tirar o fôlego."],
-            recent: "Ponto turístico mais visitado hoje",
-            meetups: []
-        },
-        { 
-            id: "bondinho", 
-            name: "Parque Bondinho Pão de Açúcar", 
-            district: "Botafogo / Urca", 
-            type: "Vista Panorâmica", 
-            moods: ["com_vista", "romantico", "cultural", "espontaneo"], 
-            budget: "medio", 
-            energy: "Mágica", 
-            shortDesc: "Passeio clássico com vistas deslumbrantes da cidade, ideal para o pôr do sol.", 
-            img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070", 
-            highlights: ["Pôr do Sol", "Teleférico", "Vista da Baía"], 
-            priorityScore: 10,
-            audienceFit: "culture_date",
-            checkins: [{ initials: "CM", desc: 'Carlos, 29, "Pôr do sol incrível"' }],
-            comments: ["Sempre uma boa ideia para impressionar."],
-            recent: "12 check-ins hoje",
-            meetups: []
-        },
-        { 
-            id: "10_e_meio", 
-            name: "10 e Meio Beach Club", 
-            district: "Barra / Recreio / Joá", 
-            type: "Beach Club", 
-            moods: ["divertido", "espontaneo", "com_vista", "viral"], 
-            budget: "medio_alto", 
-            energy: "Vibrante", 
-            shortDesc: "Pé na areia com sofisticação e música boa no Recreio.", 
-            img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070", 
-            highlights: ["Beira-mar", "Drinks", "DJ Set"], 
-            priorityScore: 8,
-            viralTag: "trending",
-            checkins: [{ initials: "LB", desc: 'Lucas, 25, "vibe top"' }],
-            comments: ["Melhor sunset da Barra."],
-            recent: "Bombando nas redes sociais",
-            meetups: []
-        },
-        { 
-            id: "classico_beach", 
-            name: "Clássico Beach Club", 
-            district: "Barra / Recreio / Joá", 
-            type: "Beach Club", 
-            moods: ["romantico", "com_vista", "espontaneo", "viral"], 
-            budget: "medio", 
-            energy: "Chill & Chic", 
-            shortDesc: "O point perfeito para quem busca boa gastronomia e visual paradisíaco.", 
-            img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070", 
-            highlights: ["Gastronomia", "Vista Mar", "Sunset"], 
-            priorityScore: 9,
-            viralTag: "trending",
-            checkins: [{ initials: "AN", desc: 'Ana, 30, "lugar lindo"' }],
-            comments: ["Comida excelente e vista melhor ainda."],
-            recent: "Favorito dos locais",
-            meetups: []
-        },
-        { 
-            id: "rio_beach", 
-            name: "Rio Beach Club", 
-            district: "Barra / Recreio / Joá", 
-            type: "Beach Club", 
-            moods: ["divertido", "espontaneo", "viral", "com_vista"], 
-            budget: "medio_alto", 
-            energy: "Exclusiva", 
-            shortDesc: "Um oásis na Ilha da Coroa com piscina e deck privativo.", 
-            img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2070", 
-            highlights: ["Piscina", "Exclusividade", "Vista Canal"], 
-            priorityScore: 8,
-            viralTag: "trending",
-            checkins: [{ initials: "GP", desc: 'Gabi, 27, "domingo perfeito"' }],
-            comments: ["Experiência de resort no Rio."],
-            recent: "Poucas vagas disponíveis",
-            meetups: []
-        },
-        { 
-            id: "pesqueiro", 
-            name: "Pesqueiro", 
-            district: "Barra / Recreio / Joá", 
-            type: "Restaurante Beach", 
-            moods: ["romantico", "com_vista", "espontaneo"], 
-            budget: "medio_alto", 
-            energy: "Sofisticada", 
-            shortDesc: "Referência em frutos do mar com uma varanda debruçada sobre o mar da Reserva.", 
-            img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1974", 
-            highlights: ["Frutos do Mar", "Frente Mar", "Carta de Vinhos"], 
-            priorityScore: 8,
-            audienceFit: "couple_core",
-            checkins: [{ initials: "MR", desc: 'Mauro, 40, "jantar excelente"' }],
-            comments: ["O melhor peixe da região."],
-            recent: "Recomendado para casais",
-            meetups: []
-        },
-        { 
-            id: "joatinga", 
-            name: "Praia da Joatinga", 
-            district: "Barra / Recreio / Joá", 
-            type: "Parque e Passeio", 
-            moods: ["com_vista", "romantico", "espontaneo", "economico"], 
-            budget: "economico", 
-            energy: "Selvagem & Bela", 
-            shortDesc: "Uma praia escondida e paradisíaca, acessível apenas na maré baixa.", 
-            img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070", 
-            highlights: ["Exclusiva", "Natureza", "Pôr do Sol"], 
-            priorityScore: 7,
-            viralTag: "trending",
-            checkins: [{ initials: "TH", desc: 'Tiago, 22, "melhor praia do Rio"' }],
-            comments: ["Lugar mágico, preservem a natureza."],
-            recent: "Check-in popular no Instagram",
-            meetups: []
-        },
-        { 
-            id: "gigoia", 
-            name: "Ilha da Gigóia", 
-            district: "Barra / Recreio / Joá", 
-            type: "Passeio Cultural", 
-            moods: ["calmo", "espontaneo", "cultural"], 
-            budget: "medio", 
-            energy: "Boêmia & Tranquila", 
-            shortDesc: "Um refúgio pantaneiro no meio da Barra, com ruelas charmosas e ótimos restaurantes.", 
-            img: "https://images.unsplash.com/photo-1596422846543-75c6fc18a5cf?q=80&w=2070", 
-            highlights: ["Passeio de Barco", "Gastronomia", "Escondido"], 
-            priorityScore: 7,
-            checkins: [{ initials: "FL", desc: 'Flavia, 33, "parece que saí do Rio"' }],
-            comments: ["Lugar super charmoso e relaxante."],
-            recent: "Descoberta urbana",
-            meetups: []
-        },
         { 
             id: "tereze", 
             name: "Térèze", 
             district: "Santa Teresa", 
             type: "Alta Gastronomia", 
-            moods: ["romantico", "calmo"], 
+            moods: ["romantico", "calmo", "com_vista"], 
             budget: "medio_alto", 
             energy: "Calma & Sofisticada", 
             shortDesc: "Localizado no Hotel Santa Teresa MGallery, oferece uma das vistas mais deslumbrantes da Baía de Guanabara.", 
             img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070", 
             highlights: ["Vista Panorâmica", "Menu Degustação", "Luz de Velas"], 
             reason: "Romântico + Santa Teresa + Premium. Perfeito para uma celebração íntima onde o visual compensa cada centavo.",
-            checkins: [
-                { initials: "ML", desc: 'Marina, 27–32, "vim pelo sunset"' },
-                { initials: "RF", desc: 'Rafael, 30–35, "primeira vez aqui"' }
-            ],
+            checkins: [{ initials: "ML", desc: 'Marina, 27–32, "vim pelo sunset"' }, { initials: "RF", desc: 'Rafael, 30–35, "primeira vez aqui"' }],
             comments: ["Ótimo para um date sem pressa.", "A vista vale muito no fim da tarde."],
             recent: "2 novos check-ins nos últimos 20 minutos",
-            meetups: [
-                { title: "Jantar Harmonizado", time: "Hoje, 20:00", host: "Térèze", goal: "Jantar Romântico", vibe: "Elegante", price: "R$ 350", attendees: 12 }
-            ]
+            meetups: [{ title: "Jantar Harmonizado", time: "Hoje, 20:00", host: "Térèze", goal: "Jantar Romântico", vibe: "Elegante", price: "R$ 350", attendees: 12 }]
         },
         { 
             id: "aprazivel", 
             name: "Aprazível", 
             district: "Santa Teresa", 
             type: "Cozinha Brasileira", 
-            moods: ["romantico", "espontaneo"], 
+            moods: ["romantico", "espontaneo", "com_vista"], 
             budget: "medio_alto", 
             energy: "Tropical & Viva", 
             shortDesc: "Um refúgio rústico-chique cercado por natureza com vista para o Centro e Baía.", 
             img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074", 
             highlights: ["Ambiente Aberto", "Artesanal", "Romântico"], 
             reason: "Espontâneo + Santa Teresa + Médio-Alto. Combina a rusticidade carioca com um serviço impecável.",
-            checkins: [
-                { initials: "JP", desc: 'João, 25-30, "aniversário de namoro"' },
-                { initials: "AS", desc: 'Ana, 31-36, "sempre volto aqui"' }
-            ],
+            checkins: [{ initials: "JP", desc: 'João, 25-30, "aniversário de namoro"' }, { initials: "AS", desc: 'Ana, 31-36, "sempre volto aqui"' }],
             comments: ["Comida maravilhosa e clima único.", "Reserve uma mesa na varanda!"],
             recent: "1 novo check-in agora mesmo",
             meetups: []
         },
+        { id: "bonde_boca", name: "Bonde Boca", district: "Santa Teresa", type: "Bar / Petiscos", moods: ["divertido", "economico", "espontaneo"], budget: "economico", energy: "Descontraída", shortDesc: "Petiscos de boteco tradicionais com cerveja gelada na rua mais charmosa.", img: "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=2072", highlights: ["Cerveja Gelada", "Petiscos", "Mesa na Calçada"], reason: "Excelente para um date leve, sem muita cerimônia e ótimo custo-benefício.", checkins: [], comments: [], recent: "Movimentado agora", meetups: [] },
+        { id: "ophelia", name: "Ophelia", district: "Ipanema / Leblon", type: "Contemporâneo", moods: ["romantico", "divertido"], budget: "medio_alto", energy: "Sofisticada & Moderna", shortDesc: "Gastronomia contemporânea com ambiente elegante e intimista.", img: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2070", highlights: ["Design Moderno", "Carta de Vinhos", "Intimista"], reason: "Perfeito para impressionar com bons drinks e uma culinária autoral.", checkins: [], comments: [], recent: "Reserva recomendada", meetups: [] },
+        { id: "oro", name: "Oro", district: "Ipanema / Leblon", type: "Alta Gastronomia", moods: ["romantico", "calmo"], budget: "premium", energy: "Exclusiva", shortDesc: "Restaurante premiado do chef Felipe Bronze, uma verdadeira experiência sensorial.", img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070", highlights: ["Estrela Michelin", "Menu Degustação", "Alta Gastronomia"], reason: "A escolha certa para datas muito especiais e apaixonados por gastronomia.", checkins: [], comments: [], recent: "Apenas com reserva", meetups: [] },
         { 
             id: "zaza", 
             name: "Zazá Bistrô", 
@@ -538,306 +393,130 @@
             img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974", 
             highlights: ["Luz de Velas", "Decoração Artística", "Ipanema Vibes"], 
             reason: "Divertido + Ipanema + Médio-Alto. Ambiente descontraído porém extremamente romântico e sensorial.",
-            checkins: [
-                { initials: "BT", desc: 'Beto, 28-33, "drinks impecáveis"' }
-            ],
+            checkins: [{ initials: "BT", desc: 'Beto, 28-33, "drinks impecáveis"' }],
             comments: ["Lugar mágico no coração de Ipanema.", "A lula com risoto é imperdível."],
             recent: "3 pessoas salvaram este local na última hora",
-            meetups: [
-                { title: "Drinks e Descobertas", time: "Amanhã, 19:30", host: "Ana", goal: "Conhecer gente", vibe: "Animada", price: "Consumo", attendees: 6 }
-            ]
+            meetups: [{ title: "Drinks e Descobertas", time: "Amanhã, 19:30", host: "Ana", goal: "Conhecer gente", vibe: "Animada", price: "Consumo", attendees: 6 }]
         },
+        { id: "ocya_leblon", name: "OCYÁ Leblon", district: "Ipanema / Leblon", type: "Frutos do Mar", moods: ["romantico", "calmo", "cafe_sobremesa"], budget: "medio_alto", energy: "Elegante & Praiana", shortDesc: "Especializado em peixes maturados e frutos do mar com técnicas impecáveis.", img: "https://images.unsplash.com/photo-1615887023516-9b8aa78c00c4?q=80&w=2070", highlights: ["Frutos do Mar", "Peixes Maturados", "Clima Sofisticado"], reason: "Uma viagem gastronômica do mar à mesa num ambiente super agradável.", checkins: [], comments: [], recent: "Em alta na região", meetups: [] },
+        { id: "marine_resto", name: "Marine Restô", district: "Copacabana / Leme", type: "Alta Gastronomia", moods: ["romantico", "com_vista"], budget: "premium", energy: "Elegante", shortDesc: "No Fairmont Copacabana, oferece cortes grelhados de excelência e vista para a praia.", img: "https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2070", highlights: ["Grelhados", "Vista para o Mar", "Hotel de Luxo"], reason: "Com vista de tirar o fôlego para Copacabana, é imbatível para impressionar.", checkins: [], comments: [], recent: "Muito procurado hoje", meetups: [] },
+        { id: "mee", name: "Mee", district: "Copacabana / Leme", type: "Asiático", moods: ["romantico", "divertido"], budget: "premium", energy: "Vibrante & Chic", shortDesc: "O único restaurante pan-asiático da cidade com estrela Michelin no Copacabana Palace.", img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070", highlights: ["Pan-asiático", "Estrela Michelin", "Copacabana Palace"], reason: "Uma experiência marcante com sabores intensos no hotel mais icônico do Rio.", checkins: [], comments: [], recent: "Mesas esgotando", meetups: [] },
+        { id: "111_music_bar", name: "111 Music Bar", district: "Copacabana / Leme", type: "Bar & Música", moods: ["divertido", "espontaneo"], budget: "medio", energy: "Musical & Alta", shortDesc: "Drinks maravilhosos acompanhados de excelente música ao vivo em Copacabana.", img: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=2070", highlights: ["Música ao Vivo", "Coquetelaria", "Animado"], reason: "Para casais que amam terminar a noite cantando e brindando.", checkins: [], comments: [], recent: "Acontecendo agora", meetups: [] },
+        { 
+            id: "bondinho", 
+            name: "Bondinho Pão de Açúcar", 
+            district: "Botafogo / Urca", 
+            type: "Passeio / Turístico", 
+            moods: ["divertido", "espontaneo", "com_vista"], 
+            budget: "medio", 
+            energy: "Turística & Alta", 
+            shortDesc: "Passeio clássico com vistas deslumbrantes da cidade, ideal para o pôr do sol e fotos inesquecíveis.", 
+            img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070", 
+            highlights: ["Vista Panorâmica", "Pôr do Sol", "Ícone Carioca"], 
+            reason: "Espontâneo + Urca + Médio. O visual lá de cima no fim da tarde cria um clima perfeito e inesquecível.",
+            checkins: [{ initials: "CM", desc: 'Carlos, 29, "Pôr do sol incrível"' }],
+            comments: ["Sempre uma boa ideia para impressionar.", "Vale cada centavo da subida."],
+            recent: "12 check-ins hoje",
+            meetups: []
+        },
+        { id: "classico_sunset", name: "Clássico Sunset Club", district: "Botafogo / Urca", type: "Bar / Lounge", moods: ["divertido", "com_vista", "espontaneo"], budget: "medio_alto", energy: "Descontraída & Vista", shortDesc: "Aprecie o Pão de Açúcar de um ângulo privilegiado, com ótimos drinks e petiscos.", img: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1934", highlights: ["Vista do Pão de Açúcar", "Sunset", "Drinks Especiais"], reason: "Uma vista clássica carioca para curtir um fim de tarde incrível a dois.", checkins: [], comments: [], recent: "Pôr do sol em 1h", meetups: [] },
+        { id: "miam_miam", name: "Miam Miam", district: "Botafogo / Urca", type: "Contemporâneo", moods: ["romantico", "divertido", "calmo"], budget: "medio", energy: "Aconchegante & Vintage", shortDesc: "Comida comfort food em uma casa com decoração retrô muito acolhedora.", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974", highlights: ["Comfort Food", "Decoração Retrô", "Aconchego"], reason: "O lugar ideal se vocês buscam um ambiente intimista e comida que abraça.", checkins: [], comments: [], recent: "Poucas mesas", meetups: [] },
+        { id: "chora_cafe", name: "Chora Café", district: "Botafogo / Urca", type: "Café", moods: ["cafe_sobremesa", "calmo", "economico"], budget: "economico", energy: "Tranquila", shortDesc: "Cafés especiais, bolos e um cantinho aconchegante para boas conversas.", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047", highlights: ["Cafés Especiais", "Bolos Caseiros", "Clima Leve"], reason: "Date diurno perfeito: café incrível, doces e muito papo.", checkins: [], comments: [], recent: "Movimento tranquilo", meetups: [] },
+        { id: "parque_lage", name: "Parque Lage", district: "Jardim Botânico / Gávea", type: "Passeio / Cultura", moods: ["calmo", "romantico", "cultural"], budget: "economico", energy: "Inspiração", shortDesc: "Palacete histórico cercado pela Mata Atlântica com um charmoso café ao redor da piscina.", img: "https://images.unsplash.com/photo-1596767674751-60a6316eb162?q=80&w=1974", highlights: ["Arquitetura Histórica", "Natureza", "Café da Manhã"], reason: "Clássico absoluto para dates matinais, rendendo as melhores fotos do Rio.", checkins: [], comments: [], recent: "Ótimo para amanhã de manhã", meetups: [] },
+        { id: "quinta_henriqueta", name: "Quinta da Henriqueta", district: "Jardim Botânico / Gávea", type: "Cozinha Portuguesa", moods: ["romantico", "calmo"], budget: "medio_alto", energy: "Tradicional & Elegante", shortDesc: "Bacalhau e pratos portugueses autênticos em um ambiente sofisticado.", img: "https://images.unsplash.com/photo-1582283020610-1c09e3e7f411?q=80&w=2069", highlights: ["Bacalhau", "Vinhos Portugueses", "Clássico"], reason: "Para casais que apreciam um bom vinho e comida farta de tradição.", checkins: [], comments: [], recent: "Reserva recomendada", meetups: [] },
+        { id: "jardim_botanico", name: "Jardim Botânico", district: "Jardim Botânico / Gávea", type: "Passeio / Natureza", moods: ["calmo", "espontaneo", "economico"], budget: "economico", energy: "Paz & Natureza", shortDesc: "Caminhada relaxante por um dos mais importantes centros de pesquisa e conservação do mundo.", img: "https://images.unsplash.com/photo-1583344662453-93d39db43d5d?q=80&w=1974", highlights: ["Orquidário", "Vitória-Régia", "Caminhada"], reason: "Nada como caminhar sem pressa entre árvores centenárias para conhecer bem alguém.", checkins: [], comments: [], recent: "Aberto agora", meetups: [] },
+        { id: "museu_amanha", name: "Museu do Amanhã", district: "Centro / Lapa / Glória", type: "Cultura & Ciência", moods: ["cultural", "divertido", "com_vista"], budget: "economico", energy: "Inovação", shortDesc: "Arquitetura futurista na Praça Mauá com exposições interativas sobre o futuro.", img: "https://images.unsplash.com/photo-1581404169707-1606d507b9a5?q=80&w=2070", highlights: ["Arquitetura de Calatrava", "Exposições Interativas", "Praça Mauá"], reason: "A arquitetura e as reflexões das exposições sempre geram conversas incríveis.", checkins: [], comments: [], recent: "Fechado às segundas", meetups: [] },
+        { id: "coffee_five", name: "Coffee Five", district: "Centro / Lapa / Glória", type: "Café", moods: ["cafe_sobremesa", "calmo"], budget: "economico", energy: "Cosmopolita", shortDesc: "Um refúgio para amantes de cafés especiais no meio do centro urbano.", img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1934", highlights: ["Torrefação Própria", "Ambiente Moderno", "Pausa no dia"], reason: "Ótimo para aquele date rápido no meio da tarde, regado a cafeína de qualidade.", checkins: [], comments: [], recent: "Movimentado agora", meetups: [] },
+        { id: "deja_vu", name: "Déjà-vu", district: "Centro / Lapa / Glória", type: "Bistrô", moods: ["romantico", "calmo"], budget: "medio", energy: "Intimista", shortDesc: "Clima parisiense escondido no centro do Rio, perfeito para almoços charmosos.", img: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=2070", highlights: ["Culinária Francesa", "Aconchegante", "Almoço Executivo"], reason: "Surpreenda seu par com um cantinho da França em meio à correria do Centro.", checkins: [], comments: [], recent: "Apenas almoço", meetups: [] },
+        { id: "cazota_bar", name: "Cazota Bar", district: "Centro / Lapa / Glória", type: "Bar / Música", moods: ["divertido", "espontaneo"], budget: "medio", energy: "Vibrante & Boêmia", shortDesc: "Bar descolado na Lapa com bons drinks, DJs e clima perfeito para pré-night.", img: "https://images.unsplash.com/photo-1563514986064-a0f5800062ed?q=80&w=1974", highlights: ["Drinks Criativos", "DJs", "Lapa"], reason: "A escolha certa se a ideia é tomar bons drinks antes de cair na pista da Lapa.", checkins: [], comments: [], recent: "Abre à noite", meetups: [] },
+        { id: "feira_sao_cristovao", name: "Feira de São Cristóvão", district: "Centro / Lapa / Glória", type: "Cultura / Comida", moods: ["divertido", "espontaneo", "cultural", "economico"], budget: "economico", energy: "Festiva & Popular", shortDesc: "Comida nordestina, forró, karaokê e muita alegria no Pavilhão.", img: "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=2072", highlights: ["Comida Nordestina", "Forró", "Karaokê"], reason: "Um date fora do comum, cheio de risadas, carne de sol e música ao vivo.", checkins: [], comments: [], recent: "Melhor ir no fim de semana", meetups: [] },
+        { id: "nova_capela", name: "Nova Capela", district: "Centro / Lapa / Glória", type: "Tradicional", moods: ["divertido", "calmo"], budget: "medio", energy: "Histórica", shortDesc: "Restaurante e bar centenário na Lapa, famoso pelo cabrito e chopp gelado.", img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=2070", highlights: ["Cabrito Assado", "Chopp Tradicional", "Madrugada"], reason: "O clássico pós-festa ou jantar sem frescura, com muita história nas paredes.", checkins: [], comments: [], recent: "Fica aberto até tarde", meetups: [] },
+        { id: "cristo_redentor", name: "Cristo Redentor", district: "Flamengo / Catete", type: "Passeio / Turístico", moods: ["com_vista", "romantico", "espontaneo"], budget: "medio", energy: "Inesquecível", shortDesc: "A vista mais icônica do Rio. Ir via Trem do Corcovado é a melhor experiência.", img: "https://images.unsplash.com/photo-1596767674751-60a6316eb162?q=80&w=1974", highlights: ["Maravilha do Mundo", "Vista 360", "Trem Histórico"], reason: "Sempre arranca suspiros. É impossível não ter um bom momento lá em cima.", checkins: [], comments: [], recent: "Comprar ingresso antecipado", meetups: [] },
         { 
             id: "mam", 
             name: "MAM Rio", 
             district: "Centro / Lapa / Glória", 
             type: "Cultura & Arte", 
-            moods: ["calmo", "espontaneo"], 
+            moods: ["calmo", "espontaneo", "cultural"], 
             budget: "economico", 
             energy: "Inspiração & Relax", 
             shortDesc: "Arte moderna, jardins de Burle Marx e uma vista incrível da Baía de Guanabara.", 
             img: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070", 
             highlights: ["Exposições", "Jardins", "Passeio a pé"], 
             reason: "Calmo + Centro + Econômico. Perfeito para caminhar, conversar sobre arte e relaxar.",
-            checkins: [
-                { initials: "LI", desc: 'Lilian, 24, "exposição nova tá linda"' }
-            ],
+            checkins: [{ initials: "LI", desc: 'Lilian, 24, "exposição nova tá linda"' }],
             comments: ["Clima super agradável para um domingo.", "Rende ótimas fotos e conversas."],
             recent: "5 novos check-ins hoje",
-            meetups: [
-                { title: "Passeio Cultural + Café", time: "Sábado, 15:00", host: "Grupo Arte Rio", goal: "Networking", vibe: "Tranquila", price: "Grátis", attendees: 15 }
-            ]
-        }
-    ];
-
-    const partyData = [
-        { 
-            id: "sunset_arpoador", 
-            name: "Sunset no Arpoador", 
-            district: "Ipanema / Leblon", 
-            type: "Beach Club", 
-            moods: ["divertido", "espontaneo"], 
-            budget: "economico", 
-            energy: "Energia Alta", 
-            shortDesc: "Pôr do sol icônico com DJ set de House e drinks refrescantes ao ar livre.", 
-            img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073", 
-            highlights: ["Vista do Pôr do Sol", "House Music", "Open Air"], 
-            host: "Guto", 
-            objective: "Dançar & Socializar", 
-            time: "16:00 - 22:00",
-            checkins: [
-                { initials: "GL", desc: 'Guto (Host), "A vibe tá incrível!"' },
-                { initials: "MA", desc: 'Marcio, 24, "chegando agora"' }
-            ],
-            comments: ["A vibe de hoje tá demais!", "Melhor lugar pra começar a noite."],
-            recent: "Lotação de 80% atingida",
-            meetups: []
+            meetups: [{ title: "Passeio Cultural + Café", time: "Sábado, 15:00", host: "Grupo Arte Rio", goal: "Networking", vibe: "Tranquila", price: "Grátis", attendees: 15 }]
         },
-        { 
-            id: "lapa_street", 
-            name: "Samba da Lapa", 
-            district: "Centro / Lapa / Glória", 
-            type: "Cultural / Rua", 
-            moods: ["divertido", "espontaneo"], 
-            budget: "economico", 
-            energy: "Vibrante", 
-            shortDesc: "A essência boêmia do Rio: Samba de raiz e energia contagiante nos Arcos da Lapa.", 
-            img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070", 
-            highlights: ["Samba de Roda", "Boemia Tradicional"], 
-            host: "Zeca", 
-            objective: "Cultura & Networking", 
-            time: "20:00 - 03:00",
-            checkins: [
-                { initials: "LN", desc: 'Lia, 29, "primeiro samba do ano"' }
-            ],
-            comments: ["Melhor caipirinha da região.", "Energia surreal."],
-            recent: "5 novos check-ins nos últimos 10 minutos",
-            meetups: []
-        },
-        { 
-            id: "funk_chic", 
-            name: "Baile Chic Botafogo", 
-            district: "Botafogo / Urca", 
-            type: "Evento Privado", 
-            moods: ["divertido", "espontaneo"], 
-            budget: "medio", 
-            energy: "Explosiva", 
-            shortDesc: "Funk carioca curado em casarão histórico. Entrada restrita a convidados e lista.", 
-            img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069", 
-            highlights: ["Funk Curado", "Open Bar Premium"], 
-            host: "Rafa", 
-            objective: "Festa & Networking", 
-            time: "22:00 - 05:00",
-            checkins: [
-                { initials: "PR", desc: 'Paula, 22, "melhor set de funk"' }
-            ],
-            comments: ["Aprovação rápida, galera top.", "Gente bonita e som alto."],
-            recent: "Aprovação manual ativa (médio 5 min)",
-            meetups: []
-        }
+        { id: "corrientes_348", name: "Corrientes 348", district: "Barra / Recreio / Joá", type: "Carnes / Parrilla", moods: ["romantico", "divertido"], budget: "medio_alto", energy: "Elegante", shortDesc: "Carnes premium preparadas à moda argentina, ambiente espaçoso e excelente serviço.", img: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069", highlights: ["Parrilla Argentina", "Cortes Premium", "Vinhos"], reason: "Garantia de uma refeição excelente para casais que apreciam boas carnes.", checkins: [], comments: [], recent: "Recomendado reservar final de semana", meetups: [] },
+        { id: "classico_beach_barra", name: "Clássico Beach Club Barra", district: "Barra / Recreio / Joá", type: "Beach Club", moods: ["divertido", "espontaneo", "com_vista"], budget: "medio_alto", energy: "Praia & Lounge", shortDesc: "Estrutura de praia premium, drinks caprichados e música boa na areia da Barra.", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070", highlights: ["Pé na Areia", "Kitesurf View", "DJs"], reason: "Para um dia inteiro de date, começando de manhã e estendendo até o pôr do sol.", checkins: [], comments: [], recent: "Vibe de fim de semana hoje", meetups: [] },
+        { id: "pesqueiro_barra", name: "Pesqueiro Barra", district: "Barra / Recreio / Joá", type: "Frutos do Mar / Praia", moods: ["divertido", "calmo"], budget: "medio_alto", energy: "Descontraída & Chic", shortDesc: "Pé na areia estruturado, com ótimas opções de frutos do mar e drinks na orla.", img: "https://images.unsplash.com/photo-1533468430759-2c091e92eb46?q=80&w=1969", highlights: ["Frutos do Mar", "Pé na areia", "Drinks refrescantes"], reason: "O frescor do mar no prato com uma brisa constante e clima animado.", checkins: [], comments: [], recent: "Lotação média", meetups: [] },
+        { id: "ocya_ilha", name: "Ocyá Ilha", district: "Barra / Recreio / Joá", type: "Frutos do Mar", moods: ["romantico", "espontaneo", "calmo"], budget: "medio_alto", energy: "Aventura & Sabor", shortDesc: "Acesso por barco na Ilha da Gigóia, peixes na brasa e clima incrivelmente pitoresco.", img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974", highlights: ["Acesso de Barco", "Ilha da Gigóia", "Peixe na Brasa"], reason: "O passeio de barquinho já é um date à parte. O lugar é mágico e a comida espetacular.", checkins: [], comments: [], recent: "Exige reserva prévia", meetups: [] },
+        { id: "rio_beach_club", name: "Rio Beach Club", district: "Barra / Recreio / Joá", type: "Beach Club", moods: ["divertido", "espontaneo"], budget: "premium", energy: "Festa & Piscina", shortDesc: "Club com piscinas, bangalôs, DJs e clima de festa o dia inteiro na Ilha da Coroa.", img: "https://images.unsplash.com/photo-1515444744559-7be63e1600de?q=80&w=2070", highlights: ["Piscina", "Bangalôs", "Day Use"], reason: "Se a ideia do date é curtir uma pool party com muito conforto.", checkins: [], comments: [], recent: "Verificar programação de festas", meetups: [] },
+        { id: "praia_barra", name: "Praia da Barra", district: "Barra / Recreio / Joá", type: "Passeio / Praia", moods: ["calmo", "economico", "espontaneo", "com_vista"], budget: "economico", energy: "Relax & Esporte", shortDesc: "Extensa faixa de areia, quiosques e ciclovia. Perfeito para atividades ao ar livre.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073", highlights: ["Caminhada no Calçadão", "Água de Coco", "Pôr do Sol"], reason: "Um rolé de bicicleta ou caminhada no fim da tarde é simples, barato e muito agradável.", checkins: [], comments: [], recent: "Bom para exercícios matinais", meetups: [] }
     ];
 
     function toggleMood(btn) {
-        btn.classList.toggle('chip-active');
+        const mood = btn.getAttribute('data-mood');
+        if (selectedMoods.includes(mood)) {
+            selectedMoods = selectedMoods.filter(m => m !== mood);
+            btn.classList.remove('chip-active');
+        } else {
+            selectedMoods.push(mood);
+            btn.classList.add('chip-active');
+        }
     }
 
     function toggleBudget(btn) {
-        const buttons = document.querySelectorAll('.budget-btn');
-        buttons.forEach(b => b.classList.remove('chip-active'));
-        btn.classList.add('chip-active');
+        document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('chip-active'));
+        if (selectedBudget === btn.getAttribute('data-budget')) {
+            selectedBudget = null;
+        } else {
+            selectedBudget = btn.getAttribute('data-budget');
+            btn.classList.add('chip-active');
+        }
     }
 
-    function switchAppMode(mode) {
-        appMode = mode;
-        const plannerBtn = document.getElementById('mode-planner');
-        const partyBtn = document.getElementById('mode-party');
-        const heroTitle = document.getElementById('hero-title');
-        const heroSub = document.getElementById('hero-subtitle');
-        const step1Title = document.getElementById('step-1-title');
+    function getFilteredResults() {
+        const neighborhood = document.getElementById('neighborhood-select').value;
+        let results = seedPlaces;
 
-        plannerBtn.className = "px-6 py-2 rounded-lg font-button text-sm transition-all text-stone-500 hover:bg-stone-50";
-        partyBtn.className = "px-6 py-2 rounded-lg font-button text-sm transition-all text-stone-500 hover:bg-stone-50";
-
-        if(mode === 'planner') {
-            plannerBtn.classList.add('mode-btn-active', 'text-white');
-            heroTitle.innerText = "O que fazer com seu par hoje à noite?";
-            heroSub.innerText = "Encontre os melhores programas e lugares no Rio de Janeiro com base no seu clima, orçamento e região.";
-            step1Title.innerText = "Qual é o clima?";
-            document.getElementById('build-plan-btn').innerText = "Montar Meu Plano";
-        } else {
-            partyBtn.classList.add('mode-btn-active', 'text-white');
-            heroTitle.innerText = "Sinta a Energia da Noite Carioca";
-            heroSub.innerText = "Descubra festas, beach clubs e gatherings exclusivos acontecendo agora no Rio.";
-            step1Title.innerText = "Qual a Vibe?";
-            document.getElementById('build-plan-btn').innerText = "Ver Radar de Festas";
+        if (selectedMoods.length > 0) {
+            results = results.filter(place => place.moods.some(m => selectedMoods.includes(m)));
         }
-        document.getElementById('results-area').classList.add('hidden');
+        if (selectedBudget) {
+            results = results.filter(place => place.budget === selectedBudget);
+        }
+        if (neighborhood) {
+            results = results.filter(place => place.district === neighborhood);
+        }
+
+        // Return top 3 scored based on match percentage, or random fallback
+        if(results.length > 3) {
+            return results.sort(() => 0.5 - Math.random()).slice(0, 3);
+        } else if (results.length === 0) {
+            // Fallback to random 3 if too restrictive
+            return seedPlaces.sort(() => 0.5 - Math.random()).slice(0, 3);
+        }
+        
+        return results;
     }
 
     function renderResults() {
         const resultsArea = document.getElementById('results-area');
         const resultsGrid = document.getElementById('results-grid');
-        
         resultsArea.classList.remove('hidden');
-        resultsArea.scrollIntoView({ behavior: 'smooth' });
+        resultsGrid.innerHTML = '';
         
-        const selectedMoods = Array.from(document.querySelectorAll('.mood-btn.chip-active')).map(btn => btn.dataset.mood);
-        const selectedBudget = document.querySelector('.budget-btn.chip-active')?.dataset.budget;
-        const selectedNeighborhood = document.getElementById('neighborhood-select').value;
-        const isViralOnly = document.getElementById('viral-toggle').checked;
+        const matchedPlaces = getFilteredResults();
 
-        let results = appMode === 'planner' ? [...seedPlaces] : [...partyData];
-
-        // Scoring & Filtering
-        results = results.map(item => {
-            let score = item.priorityScore || 0;
-            
-            // Mood matching
-            const matchCount = selectedMoods.filter(m => item.moods.includes(m)).length;
-            score += matchCount * 5;
-
-            // Extra boost for high-priority moods in specific venues
-            if (selectedMoods.some(m => ["com_vista", "romantico", "espontaneo", "divertido", "cultural"].includes(m))) {
-                if (item.priorityScore >= 8) score += 10;
-            }
-
-            // Budget filter (soft filter for scoring, but usually strict in real apps)
-            if (selectedBudget && item.budget === selectedBudget) score += 4;
-            
-            // Neighborhood filter
-            if (selectedNeighborhood && item.district === selectedNeighborhood) score += 5;
-
-            // Viral filter
-            if (isViralOnly && item.moods.includes('viral')) score += 15;
-
-            return { ...item, finalScore: score };
-        });
-
-        // Sort by score
-        results.sort((a, b) => b.finalScore - a.finalScore);
-
-        // Take top 3 results
-        const itemsToShow = results.slice(0, 3);
-        
-        let html = '';
-        itemsToShow.forEach(item => {
-            const fitsText = `Combina perfeitamente com seu clima ${selectedMoods.join(', ')} em ${item.district}. ${item.priorityScore >= 9 ? 'Uma escolha de elite para uma experiência icônica.' : 'Perfeito para criar novas memórias.'}`;
-            
-            html += `
-                <div class="bg-white rounded-2xl shadow-sm border border-outline-variant overflow-hidden group hover:shadow-md transition-all flex flex-col">
-<div class="relative h-48 overflow-hidden cursor-pointer" onclick="openModal('${item.id}')">
-<img alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${item.img}"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<div class="absolute bottom-4 left-4 text-white">
-<h3 class="font-h3 text-2xl">${item.name}</h3>
-<p class="text-xs opacity-90">${item.district}</p>
-</div>
-                        ${item.viralTag ? `<span class="absolute top-4 left-4 bg-tertiary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">${item.viralTag}</span>` : ''}
-                    </div>
-<div class="p-6 flex-1 flex flex-col">
-<div class="flex items-center gap-2 mb-4">
-<span class="px-2 py-1 bg-stone-100 text-stone-600 rounded text-[10px] font-bold uppercase tracking-widest">${item.type}</span>
-</div>
-<p class="font-body-md text-stone-600 text-sm mb-4">${item.shortDesc}</p>
-<div class="bg-primary/5 p-3 rounded-lg mb-6">
-<p class="text-[11px] font-bold text-primary uppercase mb-1 tracking-wider">Por que combina:</p>
-<p class="text-xs text-stone-700 leading-relaxed italic">"${item.reason || fitsText}"</p>
-</div>
-<button class="w-full py-3 text-center border border-primary text-primary font-button rounded-xl hover:bg-primary hover:text-white transition-all font-semibold" onclick="openModal('${item.id}')">Ver Detalhes</button>
-</div>
-</div>
-            `;
-        });
-        
-        resultsGrid.innerHTML = html || '<div class="col-span-full py-20 text-center text-stone-500">Nenhum local encontrado para esses filtros. Tente ampliar sua busca!</div>';
-    }
-
-    function closeModal() { document.getElementById('details-modal').classList.add('hidden'); }
-
-    function switchModalTab(tab) {
-        const detailsTab = document.getElementById('tab-details');
-        const meetupsTab = document.getElementById('tab-meetups');
-        const detailsContent = document.getElementById('content-details');
-        const meetupsContent = document.getElementById('content-meetups');
-
-        if(tab === 'details') {
-            detailsTab.classList.add('tab-active');
-            meetupsTab.classList.remove('tab-active');
-            detailsContent.classList.remove('hidden');
-            meetupsContent.classList.add('hidden');
-        } else {
-            meetupsTab.classList.add('tab-active');
-            detailsTab.classList.remove('tab-active');
-            meetupsContent.classList.remove('hidden');
-            detailsContent.classList.add('hidden');
-        }
-    }
-
-    function toggleHostForm() {
-        const form = document.getElementById('host-meetup-form');
-        form.classList.toggle('hidden');
-    }
-
-    function openModal(id) {
-        const data = appMode === 'planner' ? seedPlaces : partyData;
-        const item = data.find(p => p.id === id);
-        if(!item) return;
-
-        const modalContent = document.getElementById('modal-content');
-        const budgetLabel = item.budget === 'economico' ? 'Econômico' : (item.budget === 'medio' ? 'Médio' : (item.budget === 'medio_alto' ? 'Médio-Alto' : 'Premium'));
-
-        let meetupsHtml = '';
-        if (item.meetups && item.meetups.length > 0) {
-            meetupsHtml = item.meetups.map(m => `
-                <div class="border border-stone-200 rounded-xl p-5 mb-4 hover:border-primary transition-all bg-white">
-<div class="flex justify-between items-start mb-3">
-<h5 class="font-button font-bold text-lg text-primary">${m.title}</h5>
-<span class="text-xs font-bold bg-primary/10 text-primary px-2 py-1 rounded">${m.price}</span>
-</div>
-<div class="grid grid-cols-2 gap-y-2 text-sm text-stone-600 mb-4">
-<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">schedule</span> ${m.time}</div>
-<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">person</span> Host: ${m.host}</div>
-<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">flag</span> ${m.goal}</div>
-<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">music_note</span> ${m.vibe}</div>
-</div>
-<div class="flex items-center justify-between pt-3 border-t border-stone-100">
-<span class="text-xs text-stone-500">${m.attendees} pessoas confirmadas</span>
-<button class="text-primary font-bold text-sm hover:underline">Pedir para Participar</button>
-</div>
-</div>
-            `).join('');
-        } else {
-            meetupsHtml = `
-                <div class="text-center py-12 bg-stone-50 rounded-2xl border border-stone-200 border-dashed">
-<span class="material-symbols-outlined text-4xl text-stone-300 mb-2">event_busy</span>
-<p class="text-stone-500 text-sm">Nenhum encontro marcado aqui ainda.</p>
-<p class="text-stone-400 text-xs mt-1">Seja o primeiro a organizar algo legal!</p>
-</div>
-            `;
-        }
-
-        modalContent.innerHTML = `
-            <div class="relative h-64 md:h-80">
-<img alt="${item.name}" class="w-full h-full object-cover" src="${item.img}"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<button class="absolute top-6 right-6 bg-black/40 hover:bg-black/60 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all z-10" onclick="closeModal()">
-<span class="material-symbols-outlined">close</span>
-</button>
-<div class="absolute bottom-6 left-8 right-8 text-white">
-<div class="flex items-center gap-2 mb-2">
-<span class="px-2 py-1 bg-primary text-white rounded text-[10px] font-bold uppercase tracking-widest">${item.type}</span>
-<span class="px-2 py-1 bg-white/20 backdrop-blur rounded text-[10px] font-bold uppercase tracking-widest">${item.energy}</span>
-</div>
-<h3 class="font-h2 text-4xl mb-1">${item.name}</h3>
-<div class="flex items-center gap-3 text-sm opacity-90 font-button">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> ${item.district}</span>
-<span>•</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span> ${budgetLabel}</span>
-</div>
-</div>
-</div>
-<div class="flex border-b border-stone-200 px-8 pt-4 bg-stone-50/50">
-<button class="px-6 py-4 font-button text-sm text-stone-500 hover:text-primary transition-colors tab-active" id="tab-details" onclick="switchModalTab('details')">Sobre o Local</button>
-<button class="px-6 py-4 font-button text-sm text-stone-500 hover:text-primary transition-colors" id="tab-meetups" onclick="switchModalTab('meetups')">Encontros Neste Lugar</button>
-</div>
-<div class="p</script></body></html>
+        matchedPlaces.forEach(place => {
+            const card = document.createElement('div');
+            card.className = "bg-white rounded-2xl overflow-hidden shadow-md border border-outline-variant flex flex-col group";
+            card.innerHTML = `
+                <div class="relative h-48 overflow-hidden">
+                    <img src="${place.img}" alt="${place.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                        ${place.district}
+                    </script></body></html>
