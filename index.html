@@ -1,4 +1,5 @@
-<html class="scroll-smooth" lang="pt-BR"><head>
+<html class="scroll-smooth" lang="pt-BR"><head></head><body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">```html
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Rio Concierge | Descoberta de Encontros Curados</title>
@@ -65,23 +66,6 @@
         .chip-active span {
             color: #ffffff !important;
         }
-        .itinerary-line::before {
-            content: '';
-            position: absolute;
-            left: 11px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #4d0610;
-            opacity: 0.2;
-        }
-        .pulse-match {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .7; }
-        }
         .nav-link-active {
             color: #6B1D23;
             border-bottom: 2px solid #6B1D23;
@@ -89,8 +73,6 @@
             font-weight: 600;
         }
     </style>
-</head>
-<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-[60] bg-[#FCF9F5] border-b border-stone-200">
 <div class="flex justify-between items-center h-20 px-10 max-w-7xl mx-auto">
@@ -265,7 +247,7 @@
                         </button>
 </div>
 <div class="grid md:grid-cols-3 gap-10" id="results-grid">
-<!-- Dynamic Venue Cards Inject Here -->
+<!-- Venue Cards are injected here -->
 </div>
 </div>
 </section>
@@ -277,9 +259,8 @@
 <p class="font-body-md text-stone-500">Não sabe por onde começar? Explore nossas coleções curadas.</p>
 </div>
 <div class="grid md:grid-cols-3 gap-8">
-<!-- Inspiration Cards -->
 <div class="group cursor-pointer relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
-<img alt="Primeiro Encontro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzNIp7Tvjuy_cBB2DnaRQUn1U8i4ZrC27ugQ0xYsMS4HipCgvW4xiSqCvL0Ci3U1Tyb6QuMDFMwh4fAUaUO9rdZjdzB0naY7kq4teNV_YEL0H-Uwbzp-PBHxJXZxsF74XiigSEwEaY9MsPqrLQBgaiim_yY-GcnURGiet1_AbnfGSU5r9lhpdIGfmaOwYVAty7pn8vfKg2mQC9LLXbKYLPh2r8eGGX3MFfLXdZ_3rXpXDpv5NwZCGS4jy2jqFLjSZ80yFkhTGseO4"/>
+<img alt="Primeiro Encontro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCliNBnArFCnB_kogxX71j7gLfigU7sqK3dtqc6hBebSLstAqsTBJUjPzM8Yp1Y-YyQ0k2gj_vtc8FWL40yKcJdc-JWx1jhlFotSwgZGaGaOHV77KG4BXVtaeLtkZwCVwHmMoPpTDddEjiUh-WI1lT3dYh8giYKVC2xZf4A3wM9ms2Z0s_rTp9gn6aMCF8oxikIguNXu0H-_xFyCgFkKavA7Y004bF80yMO8FebUZe6EmSFfGmZynXoL3_PwvSz5NGSbZEwLeScuHc"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 <div class="absolute bottom-8 left-8 text-white">
 <h4 class="font-h3 text-2xl mb-2">Primeiro Encontro</h4>
@@ -287,7 +268,7 @@
 </div>
 </div>
 <div class="group cursor-pointer relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
-<img alt="Aniversário" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCce6XJh6AZap6vxOgY_A_hzk-xHKPMKknwCGxKKVVsxhA4s75ALZp7noHvUnojqxRGZHrd5PV6hziuoCwyPtG9rcvAVadyVQFcz29NrSDD1GI-nREtbIEsPETcikoLMK8nfDboEa2wNSCU62OjkFgxACP_h9JvPtS1U6c0QScjnexMON9l1KQIvqMbLw7xL3DIKUTCWQh4lne4K67qwepus4eu4RPMdyG6S3nK4dPBkwYBiBjmYJiRJsM7nSBclD9aaYgQpqp60YQ"/>
+<img alt="Aniversário" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH-PVvYU4mB055df-Ril6SQ0g9RGBetKjhvaQAHgd-3SqM7D4aRgLUJTASthNekbrn8N8yVhGjJ1TZQKO4SbrfRbB9ndLj45zWHV9o8UJnLdJ09tFQ6RCe7VuJgKVme1xNuksX8GLhur8AgYcARsPESzOnsux1RjGlIp77sNtJtsE7TBjRXG7T6YNcKl3FS9Ei8EPmbY5fOeNOgInXVoFmsrH1CSA2IUl83wJ-GgsGkTpil-oYEsoy9-Kn5Bm1uWlnBDbqUaomPs4"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 <div class="absolute bottom-8 left-8 text-white">
 <h4 class="font-h3 text-2xl mb-2">Noite de Aniversário</h4>
@@ -295,7 +276,7 @@
 </div>
 </div>
 <div class="group cursor-pointer relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
-<img alt="Passeio Espontâneo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEMjXLI-WJUfgn5_81o_9ARpOR3icBMdhGqUlropjrVzg39mf530ivsMCDQRklwgCVof0ffnbInGfWC43gkVwHO3C24k0A-tjH8TX4w_wgpnhmot1o3eTNJpocTJR861GN7OEln6EWHE8GLR8sNf9nmayOdd97S4umpMh4K0hHwngta2wsoqDsk6ysK03xKciMfFcQBOTV4tRS-cQoB4bokvkE6rExy1Z7sr8z2J8BN7X8orQ-IlsSZkL8OpJXZs3HGO7SaLq37fo"/>
+<img alt="Passeio Espontâneo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBh1Rpi2gE1Spk09iESN2j6fL1IIdnRgLRVXyWMm68HvQySXwcKi8T0GBcXaPKVr26FCVnfoUmJJugj9ePEL_yaMSEIh2c2VItFiZJKXecRUIQRzJthw44VXUO0FyOobC3BONADtuazE-zFDOS-K7QcFBsChtbc_qsRrokhQ8ZPmjdsFFuRezng1imH217uAO9n6YU7oZHf4tZZOuyJOVnZ09O8BQ3aqZoiy3_gmm38GdXdEVacC5tLUHmSXQNvYJue-POUjXqJic"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 <div class="absolute bottom-8 left-8 text-white">
 <h4 class="font-h3 text-2xl mb-2">Passeio Espontâneo</h4>
@@ -332,7 +313,7 @@
 <div class="p-10">
 <div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-10">
 <div class="flex-1">
-<h3 class="font-h2 text-4xl text-primary mb-2" id="modal-name">Nome do Local</h3>
+<h3 class="font-h2 text-4xl text-primary mb-2" id="modal-name">Nome</h3>
 <div class="flex items-center gap-4 text-stone-500 font-button">
 <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">location_on</span> <span id="modal-district">Bairro</span></span>
 <span class="w-1 h-1 bg-stone-300 rounded-full"></span>
@@ -354,13 +335,11 @@
 <h4 class="font-button text-primary font-bold mb-3 flex items-center gap-2">
 <span class="material-symbols-outlined">tips_and_updates</span> Por que este local?
                                 </h4>
-<p class="font-body-md text-stone-700 leading-relaxed" id="modal-desc">Descrição completa do local...</p>
+<p class="font-body-md text-stone-700 leading-relaxed" id="modal-desc">Descrição...</p>
 </div>
 <div>
 <h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Destaques para o Encontro</h4>
-<div class="flex flex-wrap gap-3" id="modal-highlights">
-<!-- Dynamic tags -->
-</div>
+<div class="flex flex-wrap gap-3" id="modal-highlights"></div>
 </div>
 </div>
 <div class="space-y-8">
@@ -368,7 +347,7 @@
 <h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Atividade Recente</h4>
 <div class="flex items-center gap-4 mb-4">
 <div class="flex -space-x-3" id="modal-checkins"></div>
-<span class="text-xs text-stone-600 font-semibold" id="checkin-count">3 casais ativos agora</span>
+<span class="text-xs text-stone-600 font-semibold" id="checkin-count">Carregando...</span>
 </div>
 <button class="w-full bg-tertiary-container text-white py-3 rounded-xl text-sm font-button hover:opacity-90 shadow-md transition-all flex items-center justify-center gap-2" onclick="handleInteraction('checkin')">
 <span class="material-symbols-outlined text-lg">check_circle</span> Fazer check-in
@@ -409,25 +388,26 @@
 </footer>
 <script>
         const seedPlaces = [
-            { id: "tereze", name: "Térèze", district: "Santa Teresa", type: "restaurante", moods: ["romantico", "calmo"], budget: "medio_alto", energy: "calmo", viralTag: "standard", audienceFit: "couple_core", shortDesc: "Sofisticação franco-carioca com uma das vistas mais exclusivas do Rio.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070", highlights: ["Vista Panorâmica", "Menu Degustação"], checkins: ["Mariana", "Ricardo"], comments: ["Inesquecível.", "Melhor vista do Rio."] },
-            { id: "aprazivel", name: "Aprazível", district: "Santa Teresa", type: "restaurante", moods: ["romantico", "com_vista"], budget: "premium", energy: "medio", viralTag: "standard", audienceFit: "couple_core", shortDesc: "Uma experiência sensorial em meio ao verde de Santa Teresa.", img: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=2070", highlights: ["Jardim Tropical", "Cachaçaria"], checkins: ["Gabriel", "Fernanda"], comments: ["Lugar mágico."] },
-            { id: "zaza", name: "Zazá Bistrô", district: "Ipanema / Leblon", type: "restaurante", moods: ["romantico", "calmo"], budget: "medio_alto", energy: "calmo", viralTag: "standard", audienceFit: "couple_core", shortDesc: "Cozinha contemporânea com toques asiáticos em um sobrado charmoso.", img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074", highlights: ["Luz de velas", "Ipanema"], checkins: ["Bia", "Thiago"], comments: ["Aconchegante."] },
-            { id: "marine", name: "Marine Restô", district: "Copacabana / Leme", type: "restaurante", moods: ["romantico", "com_vista"], budget: "premium", energy: "calmo", viralTag: "standard", audienceFit: "couple_core", shortDesc: "Elegância beira-mar no Fairmont Rio com vista total de Copacabana.", img: "https://images.unsplash.com/photo-1560624056-4442681ea821?q=80&w=2070", highlights: ["Copacabana", "Vista Mar"], checkins: ["Lucas", "Carla"], comments: ["Visual lindo."] },
-            { id: "classico", name: "Clássico Beach Club", district: "Barra / Recreio / Joá", type: "beach_club", moods: ["romantico", "espontaneo", "com_vista", "cafe_sobremesa"], budget: "medio", energy: "medio", viralTag: "trending", audienceFit: "trending_social", shortDesc: "A vibe perfeita de sunset com drinks autorais e pé na areia.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073", highlights: ["Sunset", "Pé na areia"], checkins: ["Julia", "Felipe"], comments: ["Vibe incrível."] },
-            { id: "cristo", name: "Cristo Redentor", district: "Botafogo / Urca", type: "cultural", moods: ["romantico", "com_vista", "cultural"], budget: "medio", energy: "alto", viralTag: "standard", audienceFit: "tourist", shortDesc: "O maior símbolo do Rio com uma visão 360 graus da cidade maravilhosa.", img: "https://images.unsplash.com/photo-1593995863951-57c27e518295?q=80&w=1974", highlights: ["Ícone", "Vista 360"], checkins: ["Leo", "Ana"], comments: ["Emocionante."] },
-            { id: "bondinho", name: "Bondinho Pão de Açúcar", district: "Botafogo / Urca", type: "cultural", moods: ["romantico", "espontaneo", "com_vista", "cultural"], budget: "medio", energy: "medio", viralTag: "standard", audienceFit: "tourist", shortDesc: "Um passeio inesquecível suspenso sobre a Baía de Guanabara.", img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070", highlights: ["Teleférico", "Pôr do Sol"], checkins: ["Vitor", "Sara"], comments: ["Vista única."] },
-            { id: "parque_lage", name: "Parque Lage", district: "Jardim Botânico / Gávea", type: "cultural", moods: ["calmo", "economico", "cultural"], budget: "economico", energy: "calmo", viralTag: "trending", audienceFit: "couple_core", shortDesc: "Palacete histórico cercado pela Mata Atlântica, perfeito para um brunch.", img: "https://images.unsplash.com/photo-1596438459194-f275f413d6ff?q=80&w=2074", highlights: ["Histórico", "Natureza"], checkins: ["Nina", "Davi"], comments: ["Lugar de filme."] },
-            { id: "mam", name: "MAM Rio", district: "Centro / Lapa / Glória", type: "cultural", moods: ["calmo", "economico", "cultural"], budget: "economico", energy: "calmo", viralTag: "standard", audienceFit: "intellectual", shortDesc: "Arquitetura modernista e arte contemporânea em frente ao Aterro.", img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1974", highlights: ["Arte", "Arquitetura"], checkins: ["Igor", "Lara"], comments: ["Muito tranquilo."] },
-            { id: "coffee_five", name: "Coffee Five", district: "Centro / Lapa / Glória", type: "cafe", moods: ["calmo", "cafe_sobremesa", "economico"], budget: "economico", energy: "calmo", viralTag: "standard", audienceFit: "local", shortDesc: "Cafés especiais no coração do centro histórico do Rio.", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1887", highlights: ["Café Especial", "Aconchegante"], checkins: ["Tati", "Beto"], comments: ["Melhor café."] },
-            { id: "praia_barra", name: "Praia da Barra", district: "Barra / Recreio / Joá", type: "natureza", moods: ["calmo", "espontaneo", "com_vista", "economico"], budget: "economico", energy: "medio", viralTag: "standard", audienceFit: "local", shortDesc: "Extensa faixa de areia branca e águas claras para um dia relaxante.", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070", highlights: ["Mar", "Caminhada"], checkins: ["Guto", "Mel"], comments: ["Amo essa paz."] },
-            { id: "rio_beach", name: "Rio Beach Club", district: "Barra / Recreio / Joá", type: "lazer", moods: ["divertido", "espontaneo"], budget: "medio", energy: "alto", viralTag: "trending", audienceFit: "trending_social", shortDesc: "Clube exclusivo com piscina, música e esportes na Ilha da Coroa.", img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070", highlights: ["Piscina", "Música"], checkins: ["Pri", "Alex"], comments: ["Pool party top."] },
-            { id: "feira_cristovao", name: "Feira de São Cristóvão", district: "Centro / Lapa / Glória", type: "cultural", moods: ["divertido", "cultural"], budget: "economico", energy: "alto", viralTag: "standard", audienceFit: "local", shortDesc: "O melhor do Nordeste no Rio: comida, forró e artesanato.", img: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?q=80&w=2070", highlights: ["Forró", "Gastronomia"], checkins: ["Zeca", "Lua"], comments: ["Muita alegria."] },
-            { id: "circo_voador", name: "Circo Voador", district: "Centro / Lapa / Glória", type: "show", moods: ["divertido"], budget: "medio", energy: "alto", viralTag: "trending", audienceFit: "trending_social", shortDesc: "O palco mais icônico da Lapa para shows e noites intensas.", img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070", highlights: ["Shows", "Lapa"], checkins: ["Rafa", "Leo"], comments: ["Energia surreal."] },
-            { id: "cazota", name: "Cazota Bar", district: "Botafogo / Urca", type: "bar", moods: ["divertido"], budget: "medio", energy: "medio", viralTag: "standard", audienceFit: "local", shortDesc: "Bar de vinhos e petiscos com curadoria jovem em Botafogo.", img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070", highlights: ["Vinhos", "Petiscos"], checkins: ["Hugo", "Isa"], comments: ["Vibe boa."] },
-            { id: "dejavu", name: "Déjà-vu", district: "Ipanema / Leblon", type: "bar", moods: ["divertido"], budget: "medio_alto", energy: "medio", viralTag: "trending", audienceFit: "trending_social", shortDesc: "Lounge bar sofisticado com cocktails autorais e DJ set.", img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069", highlights: ["Cocktails", "Música"], checkins: ["Fabi", "Guil"], comments: ["Drinks 10/10."] },
-            { id: "chora_cafe", name: "Chora Café", district: "Flamengo / Catete", type: "cafe", moods: ["espontaneo", "cafe_sobremesa"], budget: "economico", energy: "calmo", viralTag: "standard", audienceFit: "local", shortDesc: "Charme e doçura em um pequeno café de bairro no Flamengo.", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047", highlights: ["Bolos", "Bairro"], checkins: ["Ju", "Caio"], comments: ["Melhor bolo."] },
-            { id: "ocya", name: "Ocyá", district: "Barra / Recreio / Joá", type: "restaurante", moods: ["espontaneo"], budget: "medio_alto", energy: "medio", viralTag: "trending", audienceFit: "local", shortDesc: "Frutos do mar frescos em uma ilha escondida na Barra.", img: "https://images.unsplash.com/photo-1551731359-2b3ca4a3a0e3?q=80&w=1935", highlights: ["Frutos do Mar", "Ilha"], checkins: ["Nando", "Lu"], comments: ["Peixe fresco."] },
-            { id: "amanha", name: "Museu do Amanhã", district: "Centro / Lapa / Glória", type: "cultural", moods: ["cultural"], budget: "economico", energy: "medio", viralTag: "standard", audienceFit: "tourist", shortDesc: "Museu de ciências aplicadas com foco no futuro e sustentabilidade.", img: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=2069", highlights: ["Futuro", "Praça Mauá"], checkins: ["Cris", "Xico"], comments: ["Uau."] }
+            { id: "tereze", name: "Térèze", district: "Santa Teresa", type: "Restaurante", moods: ["romantico", "calmo"], budget: "medio_alto", energy: "Calmo", viralTag: "standard", audienceFit: "Casais", shortDesc: "Sofisticação franco-carioca com uma das vistas mais exclusivas de Santa Teresa.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070", highlights: ["Vista Panorâmica", "Menu Degustação"], checkins: ["Mariana", "Ricardo"], comments: ["Inesquecível.", "Melhor vista do Rio."] },
+            { id: "aprazivel", name: "Aprazível", district: "Santa Teresa", type: "Restaurante", moods: ["romantico", "com_vista"], budget: "premium", energy: "Médio", viralTag: "standard", audienceFit: "Aniversários", shortDesc: "Uma experiência sensorial em meio ao verde e culinária brasileira autêntica.", img: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=2070", highlights: ["Jardim Tropical", "Cachaçaria Artesanal"], checkins: ["Gabriel", "Fernanda"], comments: ["Lugar mágico."] },
+            { id: "zaza", name: "Zazá Bistrô", district: "Ipanema / Leblon", type: "Restaurante", moods: ["romantico", "calmo"], budget: "medio_alto", energy: "Calmo", viralTag: "trending", audienceFit: "Encontros", shortDesc: "Cozinha contemporânea com toques asiáticos em um sobrado charmoso e colorido.", img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074", highlights: ["Luz de Velas", "Carioca Vibes"], checkins: ["Bia", "Thiago"], comments: ["Muito aconchegante."] },
+            { id: "marine", name: "Marine Restô", district: "Copacabana / Leme", type: "Restaurante", moods: ["romantico", "com_vista"], budget: "premium", energy: "Calmo", viralTag: "standard", audienceFit: "Sofisticado", shortDesc: "Elegância no Fairmont Rio com vista total para a Praia de Copacabana.", img: "https://images.unsplash.com/photo-1560624056-4442681ea821?q=80&w=2070", highlights: ["Beira-mar", "Grelhados Especiais"], checkins: ["Lucas", "Carla"], comments: ["Visual impecável."] },
+            { id: "classico", name: "Clássico Beach Club", district: "Barra / Recreio / Joá", type: "Beach Club", moods: ["romantico", "espontaneo", "com_vista"], budget: "medio", energy: "Médio", viralTag: "trending", audienceFit: "Jovens", shortDesc: "A vibe perfeita de sunset com drinks autorais e pé na areia na Praia do Pepê.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073", highlights: ["Pôr do Sol", "Drinks"], checkins: ["Julia", "Felipe"], comments: ["Energia contagiante."] },
+            { id: "cristo", name: "Cristo Redentor", district: "Botafogo / Urca", type: "Cultural", moods: ["romantico", "com_vista", "cultural"], budget: "medio", energy: "Alto", viralTag: "standard", audienceFit: "Turistas", shortDesc: "O maior símbolo do Rio com visão 360 graus da cidade maravilhosa.", img: "https://images.unsplash.com/photo-1593995863951-57c27e518295?q=80&w=1974", highlights: ["Maravilha do Mundo", "Vista Única"], checkins: ["Leo", "Ana"], comments: ["Sempre emocionante."] },
+            { id: "bondinho", name: "Bondinho Pão de Açúcar", district: "Botafogo / Urca", type: "Cultural", moods: ["romantico", "espontaneo", "com_vista", "cultural"], budget: "medio", energy: "Médio", viralTag: "standard", audienceFit: "Casais", shortDesc: "Um passeio inesquecível suspenso sobre a Baía de Guanabara.", img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070", highlights: ["Teleférico", "História"], checkins: ["Vitor", "Sara"], comments: ["A vista da Urca é linda."] },
+            { id: "parque_lage", name: "Parque Lage", district: "Jardim Botânico / Gávea", type: "Cultural", moods: ["calmo", "economico", "cultural"], budget: "economico", energy: "Calmo", viralTag: "trending", audienceFit: "Intelectual", shortDesc: "Palacete histórico cercado pela Mata Atlântica, perfeito para um brunch romântico.", img: "https://images.unsplash.com/photo-1596438459194-f275f413d6ff?q=80&w=2074", highlights: ["Natureza", "Café no Pátio"], checkins: ["Nina", "Davi"], comments: ["Parece um filme."] },
+            { id: "mam", name: "MAM Rio", district: "Centro / Lapa / Glória", type: "Cultural", moods: ["calmo", "economico", "cultural"], budget: "economico", energy: "Calmo", viralTag: "standard", audienceFit: "Arte", shortDesc: "Arquitetura modernista e arte contemporânea em frente ao Aterro do Flamengo.", img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1974", highlights: ["Arquitetura", "Exposições"], checkins: ["Igor", "Lara"], comments: ["Lugar de paz."] },
+            { id: "coffee_five", name: "Coffee Five", district: "Centro / Lapa / Glória", type: "Café", moods: ["calmo", "cafe_sobremesa", "economico"], budget: "economico", energy: "Calmo", viralTag: "standard", audienceFit: "Locais", shortDesc: "Cafés especiais premiados no coração do centro histórico carioca.", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1887", highlights: ["Grãos Selecionados", "Bairro Histórico"], checkins: ["Tati", "Beto"], comments: ["Melhor espresso da região."] },
+            { id: "praia_barra", name: "Praia da Barra", district: "Barra / Recreio / Joá", type: "Natureza", moods: ["calmo", "espontaneo", "com_vista", "economico"], budget: "economico", energy: "Médio", viralTag: "standard", audienceFit: "Esportistas", shortDesc: "Vasto litoral de águas cristalinas, perfeito para relaxar ou caminhar.", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070", highlights: ["Mar Aberto", "Caminhada"], checkins: ["Guto", "Mel"], comments: ["Paz total de manhã."] },
+            { id: "rio_beach", name: "Rio Beach Club", district: "Barra / Recreio / Joá", type: "Lazer", moods: ["divertido", "espontaneo"], budget: "medio", energy: "Alto", viralTag: "trending", audienceFit: "Social", shortDesc: "Clube exclusivo com piscina e música na paradisíaca Ilha da Coroa.", img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070", highlights: ["Pool Party", "Vibe Barra"], checkins: ["Pri", "Alex"], comments: ["Dia perfeito."] },
+            { id: "feira_cristovao", name: "Feira de São Cristóvão", district: "Centro / Lapa / Glória", type: "Cultural", moods: ["divertido", "cultural"], budget: "economico", energy: "Alto", viralTag: "standard", audienceFit: "Grupos", shortDesc: "O reduto da cultura nordestina com muito forró, comida e alegria.", img: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?q=80&w=2070", highlights: ["Forró", "Comida Típica"], checkins: ["Zeca", "Lua"], comments: ["Muita energia boa."] },
+            { id: "circo_voador", name: "Circo Voador", district: "Centro / Lapa / Glória", type: "Show", moods: ["divertido"], budget: "medio", energy: "Alto", viralTag: "trending", audienceFit: "Jovens", shortDesc: "O palco mais icônico da Lapa para shows inesquecíveis e noites intensas.", img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070", highlights: ["Música ao Vivo", "Lapa Roots"], checkins: ["Rafa", "Leo"], comments: ["O melhor palco do Rio."] },
+            { id: "cazota", name: "Cazota Bar", district: "Botafogo / Urca", type: "Bar", moods: ["divertido"], budget: "medio", energy: "Médio", viralTag: "standard", audienceFit: "Locais", shortDesc: "Bar de vinhos e petiscos criativos com curadoria jovem em Botafogo.", img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070", highlights: ["Vinhos Naturais", "Ambiente Cool"], checkins: ["Hugo", "Isa"], comments: ["Vibe excelente."] },
+            { id: "dejavu", name: "Déjà-vu", district: "Ipanema / Leblon", type: "Bar", moods: ["divertido"], budget: "medio_alto", energy: "Médio", viralTag: "trending", audienceFit: "Social", shortDesc: "Lounge bar sofisticado com cocktails autorais e trilha sonora impecável.", img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069", highlights: ["Mixologia", "DJ Set"], checkins: ["Fabi", "Guil"], comments: ["Drinks incríveis."] },
+            { id: "chora_cafe", name: "Chora Café", district: "Flamengo / Catete", type: "Café", moods: ["espontaneo", "cafe_sobremesa"], budget: "economico", energy: "Calmo", viralTag: "standard", audienceFit: "Locais", shortDesc: "Charme e doçura em um pequeno café de bairro focado em conforto.", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047", highlights: ["Bolos Caseiros", "Aconchego"], checkins: ["Ju", "Caio"], comments: ["Lugar fofo."] },
+            { id: "ocya", name: "Ocyá", district: "Barra / Recreio / Joá", type: "Restaurante", moods: ["espontaneo", "com_vista"], budget: "medio_alto", energy: "Médio", viralTag: "trending", audienceFit: "Foodies", shortDesc: "Experiência de frutos do mar frescos em uma ilha escondida na Barra.", img: "https://images.unsplash.com/photo-1551731359-2b3ca4a3a0e3?q=80&w=1935", highlights: ["Ilha da Gigoia", "Frutos do Mar"], checkins: ["Nando", "Lu"], comments: ["O peixe é fresquíssimo."] },
+            { id: "amanha", name: "Museu do Amanhã", district: "Centro / Lapa / Glória", type: "Cultural", moods: ["cultural", "com_vista"], budget: "economico", energy: "Médio", viralTag: "standard", audienceFit: "Turistas", shortDesc: "Museu de ciências aplicadas com foco no futuro e sustentabilidade na Praça Mauá.", img: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=2069", highlights: ["Design Único", "Reflexão"], checkins: ["Cris", "Xico"], comments: ["Impactante."] },
+            { id: "pesqueiro", name: "Pesqueiro", district: "Barra / Recreio / Joá", type: "Restaurante", moods: ["romantico", "espontaneo"], budget: "medio", energy: "Médio", viralTag: "standard", audienceFit: "Casais", shortDesc: "Tradicional quiosque de luxo com o melhor dos pescados e vista mar.", img: "https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=2070", highlights: ["Beira Mar", "Peixes"], checkins: ["Rafa", "Leo"], comments: ["Peixinho e mar."] }
         ];
 
         let selectedMood = null;
@@ -469,9 +449,9 @@
             let scoredPlaces = seedPlaces.map(place => {
                 let score = 0;
                 
-                // Mood Match (Primary Driver)
+                // Mood Match (Primary)
                 if (place.moods.includes(selectedMood)) {
-                    score += 10;
+                    score += 15;
                 }
                 
                 // Budget Match
@@ -479,16 +459,16 @@
                     score += 5;
                 } else if ((selectedBudget === 'medio_alto' && place.budget === 'medio') || 
                            (selectedBudget === 'premium' && place.budget === 'medio_alto')) {
-                    score += 2; // Close enough
+                    score += 2;
                 }
 
                 // Neighborhood Match
                 if (neighborhood && place.district === neighborhood) {
-                    score += 8;
+                    score += 10;
                 }
 
-                // Randomness for Diversity
-                score += Math.random() * 2;
+                // Random jitter for diversity
+                score += Math.random() * 3;
 
                 return { ...place, score };
             });
@@ -496,7 +476,7 @@
             // Sort by score
             scoredPlaces.sort((a, b) => b.score - a.score);
 
-            // Ensure Diverse Top 3 (try to get different types)
+            // Filter top 3 ensuring diversity in types
             let finalSelection = [];
             let seenTypes = new Set();
             
@@ -524,16 +504,26 @@
                             <img src="${venue.img}" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="${venue.name}">
                             ${venue.viralTag === 'trending' ? '<span class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Bombando</span>' : ''}
                             <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg text-[10px] font-bold text-stone-600 shadow-sm">
-                                ${venue.checkins.length} casais agora
+                                ${venue.checkins.length} ativos agora
                             </div>
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-2">
                                 <h4 class="font-h3 text-xl text-primary font-bold">${venue.name}</h4>
-                                <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">${venue.type.replace('_', ' ')}</span>
+                                <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">${venue.type}</span>
                             </div>
                             <p class="text-xs text-stone-400 font-label-caps uppercase tracking-widest mb-4 font-bold">${venue.district}</p>
-                            <p class="text-sm text-stone-600 line-clamp-2 mb-8 h-10 leading-relaxed">${venue.shortDesc}</p>
+                            
+                            <div class="mb-6">
+                                <p class="text-sm text-stone-600 line-clamp-2 leading-relaxed h-10">${venue.shortDesc}</p>
+                            </div>
+
+                            <div class="bg-primary/5 rounded-lg p-3 mb-6">
+                                <p class="text-[11px] text-primary font-semibold flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">stars</span>
+                                    Fits: ${venue.audienceFit}
+                                </p>
+                            </div>
                             
                             <div class="flex items-center justify-between mb-6 text-xs text-stone-400 font-semibold">
                                 <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">payments</span> ${budgetLabel}</span>
@@ -546,7 +536,7 @@
                                     <span class="material-symbols-outlined text-sm">bookmark</span> Salvar
                                 </button>
                             </div>
-                            <button class="w-full mt-3 py-2 text-[10px] text-stone-400 hover:text-primary transition-colors font-button uppercase tracking-widest">Tentar Outro</button>
+                            <button onclick="renderResults()" class="w-full mt-3 py-2 text-[10px] text-stone-400 hover:text-primary transition-colors font-button uppercase tracking-widest">Tentar Outro</button>
                         </div>
                     </div>
                 `;
@@ -574,9 +564,9 @@
             };
             document.getElementById('modal-budget-text').innerText = budgetMap[venue.budget];
             
-            // Contextual Description
+            // Contextual Tip
             const moodName = document.querySelector(`[data-mood="${selectedMood}"]`)?.innerText.trim() || 'especial';
-            document.getElementById('modal-desc').innerText = `Selecionamos ${venue.name} porque você busca um clima ${moodName.toLowerCase()} no Rio. ${venue.shortDesc} É um dos nossos favoritos para este perfil.`;
+            document.getElementById('modal-desc').innerText = `O Concierge recomenda ${venue.name} para o seu encontro ${moodName.toLowerCase()} no Rio. ${venue.shortDesc} É um local ideal para quem busca ${venue.energy.toLowerCase()} e exclusividade.`;
             
             const highlightsCont = document.getElementById('modal-highlights');
             highlightsCont.innerHTML = venue.highlights.map(h => `<span class="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-xs font-semibold">${h}</span>`).join('');
@@ -589,12 +579,16 @@
             document.getElementById('checkin-count').innerText = `${venue.checkins.length} casais ativos agora`;
             
             const commentsCont = document.getElementById('modal-comments');
-            commentsCont.innerHTML = venue.comments.map(c => `
-                <div class="flex items-start gap-2">
-                    <span class="material-symbols-outlined text-primary text-sm">format_quote</span>
-                    <p class="text-xs italic text-stone-600 leading-tight">"${c}"</p>
-                </div>
-            `).join('');
+            if (venue.comments && venue.comments.length > 0) {
+                commentsCont.innerHTML = venue.comments.map(c => `
+                    <div class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm">format_quote</span>
+                        <p class="text-xs italic text-stone-600 leading-tight">"${c}"</p>
+                    </div>
+                `).join('');
+            } else {
+                commentsCont.innerHTML = '<p class="text-xs text-stone-400 italic">Ainda sem comentários recentes.</p>';
+            }
 
             document.getElementById('details-modal').classList.remove('hidden');
         }
@@ -613,7 +607,7 @@
         }
 
         function getLocation() {
-            alert("Localização obtida: Ipanema, Rio de Janeiro.");
+            alert("Localização obtida: Rio de Janeiro.");
         }
 
         function openChatFromMatch() {
@@ -628,6 +622,10 @@
                 document.getElementById('results-area').classList.add('hidden');
                 document.getElementById('inspiration').classList.remove('hidden');
             }, 400);
+        }
+
+        function handleInteraction(type) {
+            if(type === 'checkin') alert("Check-in realizado! Outros casais agora podem ver que você está aqui.");
         }
     </script>
 ```</body></html>
