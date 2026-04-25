@@ -1,6 +1,4 @@
-<html class="scroll-smooth" lang="pt-BR"><head></head><body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">```html
-
-
+<html class="scroll-smooth" lang="pt-BR"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Rio Concierge | Descoberta de Encontros Curados</title>
@@ -84,6 +82,7 @@
             font-weight: bold;
         }
     </style>
+</head><body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
 <nav class="fixed top-0 w-full z-[60] bg-[#FCF9F5] border-b border-stone-200">
 <div class="flex justify-between items-center h-20 px-10 max-w-7xl mx-auto">
 <div class="font-serif italic font-bold text-2xl text-[#6B1D23] tracking-tight cursor-pointer" onclick="showView('home')">
@@ -140,21 +139,37 @@
 <span id="step-1-title">Qual é o clima?</span>
 </h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="mood-grid">
-<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="romantico">
+<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="romantico" onclick="toggleMood(this)">
 <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">favorite</span>
 <span class="font-button text-sm font-semibold">Romântico</span>
 </button>
-<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="calmo">
+<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="calmo" onclick="toggleMood(this)">
 <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">potted_plant</span>
 <span class="font-button text-sm font-semibold">Calmo</span>
 </button>
-<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="divertido">
+<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="divertido" onclick="toggleMood(this)">
 <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">celebration</span>
 <span class="font-button text-sm font-semibold">Divertido</span>
 </button>
-<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="espontaneo">
+<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="espontaneo" onclick="toggleMood(this)">
 <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">bolt</span>
 <span class="font-button text-sm font-semibold">Espontâneo</span>
+</button>
+<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="com_vista" onclick="toggleMood(this)">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">landscape</span>
+<span class="font-button text-sm font-semibold">Com Vista</span>
+</button>
+<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="cafe_sobremesa" onclick="toggleMood(this)">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">coffee</span>
+<span class="font-button text-sm font-semibold">Café &amp; Sobremesa</span>
+</button>
+<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="economico" onclick="toggleMood(this)">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">savings</span>
+<span class="font-button text-sm font-semibold">Econômico</span>
+</button>
+<button class="mood-btn border border-outline-variant p-6 rounded-xl flex flex-col items-center gap-3 hover:border-primary transition-all group bg-white" data-mood="cultural" onclick="toggleMood(this)">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">museum</span>
+<span class="font-button text-sm font-semibold">Cultural</span>
 </button>
 </div>
 </div>
@@ -165,20 +180,20 @@
 <span class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center text-sm">2</span>
                                     Defina seu orçamento
                                 </h3>
-<div class="grid grid-cols-2 gap-3">
-<button class="budget-btn border border-outline-variant p-4 rounded-xl flex flex-col items-start transition-all bg-white hover:border-primary" data-budget="economico">
+<div class="grid grid-cols-2 gap-3" id="budget-grid">
+<button class="budget-btn border border-outline-variant p-4 rounded-xl flex flex-col items-start transition-all bg-white hover:border-primary" data-budget="economico" onclick="toggleBudget(this)">
 <span class="font-button font-bold text-sm">Econômico</span>
 <span class="text-[10px] opacity-60">Até R$80 / p</span>
 </button>
-<button class="budget-btn border border-outline-variant p-4 rounded-xl flex flex-col items-start transition-all bg-white hover:border-primary" data-budget="medio">
+<button class="budget-btn border border-outline-variant p-4 rounded-xl flex flex-col items-start transition-all bg-white hover:border-primary" data-budget="medio" onclick="toggleBudget(this)">
 <span class="font-button font-bold text-sm">Médio</span>
 <span class="text-[10px] opacity-60">R$80–180 / p</span>
 </button>
-<button class="budget-btn border border-outline-variant p-4 rounded-xl flex flex-col items-start transition-all bg-white hover:border-primary" data-budget="medio_alto">
+<button class="budget-btn border border-outline-variant p-4 rounded-xl flex flex-col items-start transition-all bg-white hover:border-primary" data-budget="medio_alto" onclick="toggleBudget(this)">
 <span class="font-button font-bold text-sm">Médio-Alto</span>
 <span class="text-[10px] opacity-60">R$180–320 / p</span>
 </button>
-<button class="budget-btn border border-outline-variant p-4 rounded-xl flex flex-col items-start transition-all bg-white hover:border-primary" data-budget="premium">
+<button class="budget-btn border border-outline-variant p-4 rounded-xl flex flex-col items-start transition-all bg-white hover:border-primary" data-budget="premium" onclick="toggleBudget(this)">
 <span class="font-button font-bold text-sm">Premium</span>
 <span class="text-[10px] opacity-60">Acima de R$320 / p</span>
 </button>
@@ -369,6 +384,25 @@
             meetups: []
         },
         { 
+            id: "murver", 
+            name: "Mürver", 
+            district: "Botafogo / Urca", 
+            type: "Contemporâneo", 
+            moods: ["romantico", "divertido"], 
+            budget: "premium", 
+            energy: "Moderna & Vibrante", 
+            shortDesc: "Gastronomia autoral em um ambiente intimista e moderno com drinks excepcionais.", 
+            img: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2070", 
+            highlights: ["Drinks Autorais", "Design Moderno", "Intimista"], 
+            reason: "Romântico + Botafogo + Premium. Um date sofisticado para paladares exigentes e clima envolvente.",
+            checkins: [
+                { initials: "DV", desc: 'Davi, 35, "melhor menu degustação"' }
+            ],
+            comments: ["Experiência gastronômica de primeira.", "Atendimento impecável."],
+            recent: "Reserva necessária",
+            meetups: []
+        },
+        { 
             id: "zaza", 
             name: "Zazá Bistrô", 
             district: "Ipanema / Leblon", 
@@ -428,25 +462,6 @@
             meetups: [
                 { title: "Passeio Cultural + Café", time: "Sábado, 15:00", host: "Grupo Arte Rio", goal: "Networking", vibe: "Tranquila", price: "Grátis", attendees: 15 }
             ]
-        },
-        { 
-            id: "murver", 
-            name: "Mürver", 
-            district: "Botafogo / Urca", 
-            type: "Contemporâneo", 
-            moods: ["romantico", "divertido"], 
-            budget: "premium", 
-            energy: "Moderna & Vibrante", 
-            shortDesc: "Gastronomia autoral em um ambiente intimista e moderno com drinks excepcionais.", 
-            img: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2070", 
-            highlights: ["Drinks Autorais", "Design Moderno", "Intimista"], 
-            reason: "Romântico + Botafogo + Premium. Um date sofisticado para paladares exigentes e clima envolvente.",
-            checkins: [
-                { initials: "DV", desc: 'Davi, 35, "melhor menu degustação"' }
-            ],
-            comments: ["Experiência gastronômica de primeira.", "Atendimento impecável."],
-            recent: "Reserva necessária",
-            meetups: []
         }
     ];
 
@@ -517,6 +532,16 @@
         }
     ];
 
+    function toggleMood(btn) {
+        btn.classList.toggle('chip-active');
+    }
+
+    function toggleBudget(btn) {
+        const buttons = document.querySelectorAll('.budget-btn');
+        buttons.forEach(b => b.classList.remove('chip-active'));
+        btn.classList.add('chip-active');
+    }
+
     function switchAppMode(mode) {
         appMode = mode;
         const plannerBtn = document.getElementById('mode-planner');
@@ -542,6 +567,43 @@
             document.getElementById('build-plan-btn').innerText = "Ver Radar de Festas";
         }
         document.getElementById('results-area').classList.add('hidden');
+    }
+
+    function renderResults() {
+        const resultsArea = document.getElementById('results-area');
+        const resultsGrid = document.getElementById('results-grid');
+        
+        resultsArea.classList.remove('hidden');
+        resultsArea.scrollIntoView({ behavior: 'smooth' });
+        
+        let html = '';
+        
+        // Show first 3 items as default results
+        const itemsToShow = seedPlaces.slice(0, 3);
+        
+        itemsToShow.forEach(item => {
+            html += `
+                <div class="bg-white rounded-2xl shadow-sm border border-outline-variant overflow-hidden group hover:shadow-md transition-all flex flex-col">
+                    <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openModal('${item.id}')">
+                        <img alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${item.img}"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-h3 text-2xl">${item.name}</h3>
+                            <p class="text-xs opacity-90">${item.district}</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="px-2 py-1 bg-stone-100 text-stone-600 rounded text-[10px] font-bold uppercase tracking-widest">${item.type}</span>
+                        </div>
+                        <p class="font-body-md text-stone-600 text-sm mb-6 flex-1">${item.shortDesc}</p>
+                        <button class="w-full py-3 text-center border border-primary text-primary font-button rounded-xl hover:bg-primary hover:text-white transition-all font-semibold" onclick="openModal('${item.id}')">Ver Detalhes</button>
+                    </div>
+                </div>
+            `;
+        });
+        
+        resultsGrid.innerHTML = html;
     }
 
     function closeModal() { document.getElementById('details-modal').classList.add('hidden'); }
@@ -702,4 +764,40 @@
                         <form class="space-y-4" onsubmit="event.preventDefault(); alert('Encontro criado com sucesso!'); toggleHostForm();">
                             <div class="space-y-1">
                                 <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Nome do Evento</label>
-                                <input class="w-full border-stone-300 rounded-lg py-2 text-sm focus:ring-primary focus:border-primary</script></body></html>
+                                <input class="w-full border-stone-300 rounded-lg py-2 text-sm focus:ring-primary focus:border-primary" type="text" placeholder="Ex: Jantar de Networking..."/>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Data e Hora</label>
+                                    <input class="w-full border-stone-300 rounded-lg py-2 text-sm focus:ring-primary focus:border-primary" type="datetime-local"/>
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Vagas</label>
+                                    <input class="w-full border-stone-300 rounded-lg py-2 text-sm focus:ring-primary focus:border-primary" type="number" min="2" max="20" value="4"/>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-xl font-button hover:opacity-90 transition-all mt-4">Publicar Encontro</button>
+                        </form>
+                    </div>
+
+                    ${meetupsHtml}
+                </div>
+            </div>
+        `;
+        document.getElementById('details-modal').classList.remove('hidden');
+    }
+
+    function scrollToTop() {
+        document.getElementById('planner').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showView(viewName) {
+        document.getElementById('view-home').classList.add('hidden');
+        document.getElementById('view-chats').classList.add('hidden');
+        
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-link-active'));
+        
+        document.getElementById(`view-${viewName}`).classList.remove('hidden');
+        document.querySelector(`.${viewName}-nav`).classList.add('nav-link-active');
+    }
+</script></body></html>
