@@ -1,4 +1,5 @@
-<html class="scroll-smooth" lang="pt-BR"><head>
+<html class="scroll-smooth" lang="pt-BR"><head></head><body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">```html
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Rio Concierge | Descoberta de Encontros Curados</title>
@@ -77,8 +78,6 @@
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
     </style>
-</head>
-<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
 <nav class="fixed top-0 w-full z-[60] bg-[#FCF9F5] border-b border-stone-200">
 <div class="flex justify-between items-center h-20 px-10 max-w-7xl mx-auto">
 <div class="font-serif italic font-bold text-2xl text-[#6B1D23] tracking-tight cursor-pointer" onclick="showView('home')">
@@ -126,7 +125,7 @@
 </a>
 </div>
 </section>
-<!-- Planner Section (Also serves as Party Filter) -->
+<!-- Planner Section -->
 <section class="py-12 bg-surface-container-low px-4 md:px-0" id="planner">
 <div class="max-w-5xl mx-auto">
 <div class="bg-white rounded-2xl shadow-sm border border-outline-variant p-8 md:p-12">
@@ -188,7 +187,7 @@
                                     Localização
                                 </h3>
 <div class="space-y-4">
-<button class="w-full flex items-center justify-center gap-2 py-4 border border-outline text-primary font-button rounded-xl hover:bg-surface transition-all bg-white group" onclick="getLocation()">
+<button class="w-full flex items-center justify-center gap-2 py-4 border border-outline text-primary font-button rounded-xl hover:bg-surface transition-all bg-white group">
 <span class="material-symbols-outlined text-xl group-hover:rotate-45 transition-transform">my_location</span>
 <span>Usar minha localização</span>
 </button>
@@ -246,7 +245,7 @@
                     </button>
 </div>
 <div class="grid md:grid-cols-3 gap-10" id="results-grid">
-<!-- Cards are injected here -->
+<!-- Injected by JS -->
 </div>
 </div>
 </section>
@@ -301,87 +300,8 @@
 <div class="fixed inset-0 z-[100] hidden" id="details-modal">
 <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-md modal-close" onclick="closeModal()"></div>
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl px-4 h-[90vh] overflow-y-auto">
-<div class="bg-white rounded-3xl overflow-hidden shadow-2xl my-8 relative">
-<div class="relative h-80">
-<img alt="Local" class="w-full h-full object-cover" id="modal-image" src=""/>
-<button class="absolute top-6 right-6 bg-black/40 hover:bg-black/60 text-white w-12 h-12 rounded-full flex items-center justify-center modal-close transition-all" onclick="closeModal()">
-<span class="material-symbols-outlined">close</span>
-</button>
-<div class="absolute bottom-6 left-8 px-4 py-2 bg-primary text-white rounded-full text-xs font-bold uppercase tracking-widest shadow-lg" id="modal-badge">Recomendação do Concierge</div>
-</div>
-<div class="p-10">
-<div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-10">
-<div class="flex-1">
-<h3 class="font-h2 text-4xl text-primary mb-2" id="modal-name">Nome</h3>
-<div class="flex items-center gap-4 text-stone-500 font-button">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">location_on</span> <span id="modal-district">Bairro</span></span>
-<span class="w-1 h-1 bg-stone-300 rounded-full"></span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">payments</span> <span id="modal-budget-text">Orçamento</span></span>
-</div>
-<p class="text-xs text-stone-400 mt-2 italic" id="modal-address-lock"><span class="material-symbols-outlined text-xs">lock</span> Endereço visível apenas após aprovação ou check-in.</p>
-</div>
-<div class="flex gap-3">
-<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary/5 text-primary transition-all shadow-sm" title="Salvar">
-<span class="material-symbols-outlined">bookmark</span>
-</button>
-<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary/5 text-primary transition-all shadow-sm" title="Compartilhar">
-<span class="material-symbols-outlined">share</span>
-</button>
-</div>
-</div>
-<div class="grid md:grid-cols-3 gap-10 mb-10">
-<div class="md:col-span-2 space-y-8">
-<div class="bg-surface-container rounded-2xl p-8 border-l-8 border-primary shadow-sm">
-<h4 class="font-button text-primary font-bold mb-3 flex items-center gap-2">
-<span class="material-symbols-outlined" id="modal-reason-icon">tips_and_updates</span> <span id="modal-reason-title">Por que este local?</span>
-</h4>
-<p class="font-body-md text-stone-700 leading-relaxed" id="modal-desc">Descrição...</p>
-</div>
-<div class="hidden" id="modal-host-info">
-<h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Anfitrião</h4>
-<div class="flex items-center gap-4 bg-stone-50 p-4 rounded-xl">
-<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white font-bold" id="modal-host-avatar">?</div>
-<div>
-<div class="font-bold text-stone-800" id="modal-host-name">Host Name</div>
-<div class="text-xs text-stone-500" id="modal-host-objective">Networking &amp; Dance</div>
-</div>
-</div>
-</div>
-<div>
-<h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Destaques</h4>
-<div class="flex flex-wrap gap-3" id="modal-highlights"></div>
-</div>
-</div>
-<div class="space-y-8">
-<div>
-<h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Social &amp; Segurança</h4>
-<div class="flex items-center gap-4 mb-4">
-<div class="flex -space-x-3" id="modal-checkins"></div>
-<span class="text-xs text-stone-600 font-semibold" id="checkin-count">Carregando...</span>
-</div>
-<div class="space-y-2 mb-4">
-<div class="flex items-center gap-2 text-[10px] text-green-600 font-bold uppercase"><span class="material-symbols-outlined text-sm">verified_user</span> Aprovação Manual</div>
-<div class="flex items-center gap-2 text-[10px] text-stone-500 font-bold uppercase"><span class="material-symbols-outlined text-sm">visibility_off</span> Check-in Invisível disponível</div>
-</div>
-<button class="w-full bg-tertiary-container text-white py-3 rounded-xl text-sm font-button hover:opacity-90 shadow-md transition-all flex items-center justify-center gap-2" id="main-action-btn">
-<span class="material-symbols-outlined text-lg">check_circle</span> Tenho Interesse
-                            </button>
-</div>
-<div class="bg-stone-50 rounded-2xl p-6 border border-stone-100">
-<h4 class="font-label-caps text-[10px] text-stone-400 mb-4 uppercase tracking-widest font-bold">Feedback Social</h4>
-<div class="space-y-4" id="modal-comments"></div>
-</div>
-</div>
-</div>
-<div class="pt-10 border-t border-stone-100 flex flex-col md:flex-row gap-4 items-center">
-<button class="flex-1 w-full bg-primary text-white py-5 rounded-2xl font-button text-lg hover:opacity-90 shadow-xl transition-all flex items-center justify-center gap-2" onclick="openChatFromMatch()">
-<span class="material-symbols-outlined">forum</span> Iniciar Conversa
-                    </button>
-<button class="w-full md:w-auto px-10 py-5 border border-stone-200 text-stone-600 rounded-2xl font-button hover:bg-stone-50 transition-all modal-close" onclick="closeModal()">
-                        Voltar
-                    </button>
-</div>
-</div>
+<div class="bg-white rounded-3xl overflow-hidden shadow-2xl my-8 relative" id="modal-content">
+<!-- Content injected via JS -->
 </div>
 </div>
 </div>
@@ -396,17 +316,17 @@
 </div>
 <form class="space-y-6" onsubmit="event.preventDefault(); closeHostModal(); alert('Sua vibe foi enviada para curadoria!')">
 <div class="space-y-2">
-<label class="text-xs font-bold uppercase tracking-widest text-stone-400">Nome da Gathering</label>
+<label class="text-xs font-bold uppercase tracking-widest text-stone-400">Nome do Evento</label>
 <input class="w-full border-stone-200 rounded-xl py-3 focus:ring-primary focus:border-primary" placeholder="Ex: Sunset no Arpoador" type="text"/>
 </div>
 <div class="grid grid-cols-2 gap-4">
 <div class="space-y-2">
-<label class="text-xs font-bold uppercase tracking-widest text-stone-400">Vibe Principal</label>
+<label class="text-xs font-bold uppercase tracking-widest text-stone-400">Vibe Musical</label>
 <select class="w-full border-stone-200 rounded-xl py-3 focus:ring-primary">
 <option>Samba</option>
 <option>House</option>
 <option>Funk</option>
-<option>Jazz/Bossa</option>
+<option>Jazz / Bossa Nova</option>
 <option>Techno</option>
 </select>
 </div>
@@ -414,9 +334,9 @@
 <label class="text-xs font-bold uppercase tracking-widest text-stone-400">Objetivo</label>
 <select class="w-full border-stone-200 rounded-xl py-3 focus:ring-primary">
 <option>Networking</option>
-<option>Dance</option>
-<option>Pre-party</option>
-<option>Romance</option>
+<option>Dançar</option>
+<option>Esquenta</option>
+<option>Encontro Romântico</option>
 </select>
 </div>
 </div>
@@ -460,22 +380,130 @@
 </div>
 </footer>
 <script>
-    let appMode = 'planner'; // 'planner' or 'party'
+    let appMode = 'planner';
 
-    const venuePlaces = [
-        { id: "tereze", name: "Térèze", district: "Santa Teresa", type: "Restaurante", moods: ["romantico", "calmo"], budget: "medio_alto", energy: "Calmo", shortDesc: "Sofisticação franco-carioca com uma das vistas mais exclusivas.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070", highlights: ["Vista Panorâmica", "Menu Degustação"], checkins: ["M", "R"], comments: ["Inesquecível."] },
-        { id: "zaza", name: "Zazá Bistrô", district: "Ipanema / Leblon", type: "Restaurante", moods: ["romantico", "calmo"], budget: "medio_alto", energy: "Calmo", shortDesc: "Cozinha contemporânea com toques asiáticos em um sobrado charmoso.", img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074", highlights: ["Luz de Velas", "Carioca Vibes"], checkins: ["B", "T"], comments: ["Muito aconchegante."] },
-        { id: "oro", name: "Oro", district: "Ipanema / Leblon", type: "Restaurante", moods: ["romantico"], budget: "premium", energy: "Calmo", shortDesc: "A vanguarda da cozinha brasileira pelo chef Felipe Bronze.", img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974", highlights: ["Estrela Michelin", "Autoral"], checkins: ["V1", "V2"], comments: ["Experiência transcendental."] }
+    const seedPlaces = [
+        { 
+            id: "tereze", 
+            name: "Térèze", 
+            district: "Santa Teresa", 
+            type: "Alta Gastronomia", 
+            moods: ["romantico", "calmo"], 
+            budget: "medio_alto", 
+            energy: "Calma & Sofisticada", 
+            shortDesc: "Localizado no Hotel Santa Teresa MGallery, oferece uma das vistas mais deslumbrantes da Baía de Guanabara.", 
+            img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070", 
+            highlights: ["Vista Panorâmica", "Menu Degustação", "Luz de Velas"], 
+            reason: "Perfeito para uma celebração íntima onde o visual compensa cada centavo.",
+            checkins: [
+                { initials: "ML", desc: 'Marina, 27–32, "vim pelo sunset"' },
+                { initials: "RF", desc: 'Rafael, 30–35, "primeira vez aqui"' }
+            ],
+            comments: ["Ótimo para um date sem pressa.", "A vista vale muito no fim da tarde."],
+            recent: "2 novos check-ins nos últimos 20 minutos"
+        },
+        { 
+            id: "aprazivel", 
+            name: "Aprazível", 
+            district: "Santa Teresa", 
+            type: "Cozinha Brasileira", 
+            moods: ["romantico", "espontaneo"], 
+            budget: "medio_alto", 
+            energy: "Tropical & Viva", 
+            shortDesc: "Um refúgio rústico-chique cercado por natureza com vista para o Centro e Baía.", 
+            img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074", 
+            highlights: ["Ambiente Aberto", "Artesanal", "Romântico"], 
+            reason: "Combina a rusticidade de Santa Teresa com um serviço impecável.",
+            checkins: [
+                { initials: "JP", desc: 'João, 25-30, "aniversário de namoro"' },
+                { initials: "AS", desc: 'Ana, 31-36, "sempre volto aqui"' }
+            ],
+            comments: ["Comida maravilhosa e clima único.", "Reserve uma mesa na varanda!"],
+            recent: "1 novo check-in agora mesmo"
+        },
+        { 
+            id: "zaza", 
+            name: "Zazá Bistrô", 
+            district: "Ipanema / Leblon", 
+            type: "Contemporâneo", 
+            moods: ["romantico", "divertido"], 
+            budget: "medio_alto", 
+            energy: "Eclética & Colorida", 
+            shortDesc: "Cozinha com toques asiáticos em um dos casarões mais charmosos e coloridos de Ipanema.", 
+            img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974", 
+            highlights: ["Luz de Velas", "Decoração Artística", "Ipanema Vibes"], 
+            reason: "Ambiente descontraído porém extremamente romântico e sensorial.",
+            checkins: [
+                { initials: "BT", desc: 'Beto, 28-33, "drinks impecáveis"' }
+            ],
+            comments: ["Lugar mágico no coração de Ipanema.", "A lula com risoto é imperdível."],
+            recent: "3 pessoas salvaram este local na última hora"
+        }
     ];
 
     const partyData = [
-        { id: "sunset_arpoador", name: "Sunset no Arpoador", district: "Ipanema / Leblon", type: "Beach Club", moods: ["divertido", "espontaneo"], budget: "economico", energy: "Alto", shortDesc: "Pôr do sol icônico com DJ set de House e drinks refrescantes.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073", highlights: ["Sunset View", "House Music"], host: "Guto", checkins: ["J", "L", "A"], comments: ["A vibe de hoje tá demais!"], objective: "Dance & Vibe", time: "16:00 - 22:00" },
-        { id: "lapa_street", name: "Lapa Street Vibe", district: "Centro / Lapa / Glória", type: "Rua/Cultural", moods: ["divertido", "cultural"], budget: "economico", energy: "Muito Alto", shortDesc: "A essência boêmia do Rio: Samba de raiz e energia contagiante na rua.", img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070", highlights: ["Samba de Roda", "Boemia"], host: "Zeca", checkins: ["L", "N", "B"], comments: ["Melhor caipirinha da região."], objective: "Cultura & Networking", time: "20:00 - 03:00" },
-        { id: "funk_chic", name: "Baile Chic Botafogo", district: "Botafogo / Urca", type: "Evento Privado", moods: ["divertido", "espontaneo"], budget: "medio", energy: "Explosivo", shortDesc: "Funk carioca curado em casarão histórico. Entrada apenas com lista.", img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069", highlights: ["Funk Curado", "Open Bar Premium"], host: "Rafa", checkins: ["G", "T", "P"], comments: ["Aprovação rápida, galera top."], objective: "Party & Network", time: "22:00 - 05:00" }
+        { 
+            id: "sunset_arpoador", 
+            name: "Sunset no Arpoador", 
+            district: "Ipanema / Leblon", 
+            type: "Beach Club", 
+            moods: ["divertido", "espontaneo"], 
+            budget: "economico", 
+            energy: "Energia Alta", 
+            shortDesc: "Pôr do sol icônico com DJ set de House e drinks refrescantes ao ar livre.", 
+            img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073", 
+            highlights: ["Vista do Pôr do Sol", "House Music", "Open Air"], 
+            host: "Guto", 
+            objective: "Dançar & Socializar", 
+            time: "16:00 - 22:00",
+            checkins: [
+                { initials: "GL", desc: 'Guto (Host), "A vibe tá incrível!"' },
+                { initials: "MA", desc: 'Marcio, 24, "chegando agora"' }
+            ],
+            comments: ["A vibe de hoje tá demais!", "Melhor lugar pra começar a noite."],
+            recent: "Lotação de 80% atingida"
+        },
+        { 
+            id: "lapa_street", 
+            name: "Samba da Lapa", 
+            district: "Centro / Lapa / Glória", 
+            type: "Cultural / Rua", 
+            moods: ["divertido", "espontaneo"], 
+            budget: "economico", 
+            energy: "Vibrante", 
+            shortDesc: "A essência boêmia do Rio: Samba de raiz e energia contagiante nos Arcos da Lapa.", 
+            img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070", 
+            highlights: ["Samba de Roda", "Boemia Tradicional"], 
+            host: "Zeca", 
+            objective: "Cultura & Networking", 
+            time: "20:00 - 03:00",
+            checkins: [
+                { initials: "LN", desc: 'Lia, 29, "primeiro samba do ano"' }
+            ],
+            comments: ["Melhor caipirinha da região.", "Energia surreal."],
+            recent: "5 novos check-ins nos últimos 10 minutos"
+        },
+        { 
+            id: "funk_chic", 
+            name: "Baile Chic Botafogo", 
+            district: "Botafogo / Urca", 
+            type: "Evento Privado", 
+            moods: ["divertido", "espontaneo"], 
+            budget: "medio", 
+            energy: "Explosiva", 
+            shortDesc: "Funk carioca curado em casarão histórico. Entrada restrita a convidados e lista.", 
+            img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069", 
+            highlights: ["Funk Curado", "Open Bar Premium"], 
+            host: "Rafa", 
+            objective: "Festa & Networking", 
+            time: "22:00 - 05:00",
+            checkins: [
+                { initials: "PR", desc: 'Paula, 22, "melhor set de funk"' }
+            ],
+            comments: ["Aprovação rápida, galera top.", "Gente bonita e som alto."],
+            recent: "Aprovação manual ativa (médio 5 min)"
+        }
     ];
-
-    let selectedMood = null;
-    let selectedBudget = null;
 
     function switchAppMode(mode) {
         appMode = mode;
@@ -501,63 +529,113 @@
             step1Title.innerText = "Qual a Vibe?";
             document.getElementById('build-plan-btn').innerText = "Ver Radar de Festas";
         }
-        
-        // Reset results when switching modes
         document.getElementById('results-area').classList.add('hidden');
     }
 
-    function openHostModal() {
-        document.getElementById('host-modal').classList.remove('hidden');
-    }
-
-    function closeHostModal() {
-        document.getElementById('host-modal').classList.add('hidden');
-    }
-
-    function closeModal() {
-        document.getElementById('details-modal').classList.add('hidden');
-    }
+    function openHostModal() { document.getElementById('host-modal').classList.remove('hidden'); }
+    function closeHostModal() { document.getElementById('host-modal').classList.add('hidden'); }
+    function closeModal() { document.getElementById('details-modal').classList.add('hidden'); }
 
     function openModal(id) {
-        const data = appMode === 'planner' ? venuePlaces : partyData;
-        const item = data.find(p => p.id === id) || data[0];
-        
-        document.getElementById('modal-name').innerText = item.name;
-        document.getElementById('modal-image').src = item.img;
-        document.getElementById('modal-district').innerText = item.district;
-        document.getElementById('modal-desc').innerText = item.shortDesc;
-        document.getElementById('modal-budget-text').innerText = item.budget === 'economico' ? 'Acessível' : 'Premium';
-        
-        const highlightsDiv = document.getElementById('modal-highlights');
-        highlightsDiv.innerHTML = item.highlights.map(h => `<span class="px-3 py-1 bg-stone-100 text-stone-600 rounded-full text-xs font-semibold">${h}</span>`).join('');
+        const data = appMode === 'planner' ? seedPlaces : partyData;
+        const item = data.find(p => p.id === id);
+        if(!item) return;
 
-        const hostInfo = document.getElementById('modal-host-info');
-        const badge = document.getElementById('modal-badge');
-        const reasonTitle = document.getElementById('modal-reason-title');
-        const actionBtn = document.getElementById('main-action-btn');
+        const modalContent = document.getElementById('modal-content');
+        const budgetLabel = item.budget === 'economico' ? 'Econômico' : (item.budget === 'medio' ? 'Médio' : 'Premium');
 
-        if(appMode === 'party') {
-            hostInfo.classList.remove('hidden');
-            document.getElementById('modal-host-name').innerText = item.host;
-            document.getElementById('modal-host-objective').innerText = item.objective;
-            document.getElementById('modal-host-avatar').innerText = item.host.charAt(0);
-            badge.innerText = `Evento Social: ${item.time}`;
-            reasonTitle.innerText = "Detalhes da Gathering";
-            actionBtn.innerHTML = `<span class="material-symbols-outlined text-lg">how_to_reg</span> Entrar na Lista`;
-        } else {
-            hostInfo.classList.add('hidden');
-            badge.innerText = "Recomendação do Concierge";
-            reasonTitle.innerText = "Por que este local?";
-            actionBtn.innerHTML = `<span class="material-symbols-outlined text-lg">check_circle</span> Fazer check-in`;
-        }
-
+        modalContent.innerHTML = `
+            <div class="relative h-80">
+                <img alt="${item.name}" class="w-full h-full object-cover" src="${item.img}"/>
+                <button class="absolute top-6 right-6 bg-black/40 hover:bg-black/60 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all" onclick="closeModal()">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <div class="absolute bottom-6 left-8 px-4 py-2 bg-primary text-white rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">
+                    ${appMode === 'party' ? `Evento: ${item.time}` : 'Recomendação do Concierge'}
+                </div>
+            </div>
+            <div class="p-10">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-10">
+                    <div class="flex-1">
+                        <h3 class="font-h2 text-4xl text-primary mb-2">${item.name}</h3>
+                        <div class="flex items-center gap-4 text-stone-500 font-button">
+                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">location_on</span> ${item.district}</span>
+                            <span class="w-1 h-1 bg-stone-300 rounded-full"></span>
+                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">payments</span> ${budgetLabel}</span>
+                        </div>
+                        <p class="text-xs text-stone-400 mt-2 italic flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">lock</span> Endereço visível apenas após check-in ou confirmação.
+                        </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary/5 text-primary transition-all shadow-sm"><span class="material-symbols-outlined">bookmark</span></button>
+                        <button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary/5 text-primary transition-all shadow-sm"><span class="material-symbols-outlined">share</span></button>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10 mb-10">
+                    <div class="md:col-span-2 space-y-8">
+                        <div class="bg-surface-container rounded-2xl p-8 border-l-8 border-primary shadow-sm">
+                            <h4 class="font-button text-primary font-bold mb-3 flex items-center gap-2">
+                                <span class="material-symbols-outlined">tips_and_updates</span> 
+                                ${appMode === 'party' ? 'Detalhes da Gathering' : 'Por que combina?'}
+                            </h4>
+                            <p class="font-body-md text-stone-700 leading-relaxed">${item.reason || item.shortDesc}</p>
+                        </div>
+                        ${item.host ? `
+                        <div>
+                            <h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Anfitrião</h4>
+                            <div class="flex items-center gap-4 bg-stone-50 p-4 rounded-xl">
+                                <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">${item.host.charAt(0)}</div>
+                                <div>
+                                    <div class="font-bold text-stone-800">${item.host}</div>
+                                    <div class="text-xs text-stone-500">${item.objective}</div>
+                                </div>
+                            </div>
+                        </div>` : ''}
+                        <div>
+                            <h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Destaques</h4>
+                            <div class="flex flex-wrap gap-3">
+                                ${item.highlights.map(h => `<span class="px-3 py-1 bg-stone-100 text-stone-600 rounded-full text-xs font-semibold">${h}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Social &amp; Atividade</h4>
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="flex -space-x-3">
+                                    ${item.checkins.map(c => `<div class="w-8 h-8 rounded-full bg-stone-200 border-2 border-white flex items-center justify-center text-xs font-bold text-stone-600" title='${c.desc}'>${c.initials}</div>`).join('')}
+                                </div>
+                                <span class="text-xs text-stone-600 font-semibold">${item.recent}</span>
+                            </div>
+                            <button class="w-full bg-tertiary-container text-white py-3 rounded-xl text-sm font-button hover:opacity-90 shadow-md transition-all flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-lg">${appMode === 'party' ? 'how_to_reg' : 'check_circle'}</span> 
+                                ${appMode === 'party' ? 'Entrar na Lista' : 'Fazer Check-in'}
+                            </button>
+                        </div>
+                        <div class="bg-stone-50 rounded-2xl p-6 border border-stone-100">
+                            <h4 class="font-label-caps text-[10px] text-stone-400 mb-4 uppercase tracking-widest font-bold">Comentários Recentes</h4>
+                            <div class="space-y-4">
+                                ${item.comments.map(comment => `<p class="text-xs text-stone-600 italic border-l-2 border-stone-200 pl-3">"${comment}"</p>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-10 border-t border-stone-100 flex flex-col md:flex-row gap-4 items-center">
+                    <button class="flex-1 w-full bg-primary text-white py-5 rounded-2xl font-button text-lg hover:opacity-90 shadow-xl transition-all flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined">forum</span> Iniciar Conversa
+                    </button>
+                    <button class="w-full md:w-auto px-10 py-5 border border-stone-200 text-stone-600 rounded-2xl font-button hover:bg-stone-50 transition-all" onclick="closeModal()">Voltar</button>
+                </div>
+            </div>
+        `;
         document.getElementById('details-modal').classList.remove('hidden');
     }
 
     function renderResults() {
         const area = document.getElementById('results-area');
         const grid = document.getElementById('results-grid');
-        const data = appMode === 'planner' ? venuePlaces : partyData;
+        const data = appMode === 'planner' ? seedPlaces : partyData;
         
         grid.innerHTML = '';
         data.forEach(item => {
@@ -566,7 +644,7 @@
                     <div class="relative h-64 overflow-hidden">
                         <img src="${item.img}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary">${item.type}</div>
-                        ${appMode === 'party' ? `<div class="absolute bottom-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold">${item.energy} Energy</div>` : ''}
+                        ${appMode === 'party' ? `<div class="absolute bottom-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold">${item.energy}</div>` : ''}
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
@@ -576,10 +654,13 @@
                         <p class="text-sm text-stone-500 mb-6 line-clamp-2">${item.shortDesc}</p>
                         <div class="flex justify-between items-center pt-4 border-t border-stone-100">
                             <div class="flex -space-x-2">
-                                ${item.checkins.map(c => `<div class="w-7 h-7 rounded-full bg-stone-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-stone-600">${c}</div>`).join('')}
-                                <div class="w-7 h-7 rounded-full bg-stone-50 border-2 border-white flex items-center justify-center text-[8px] font-bold text-stone-400">+${Math.floor(Math.random()*20)}</div>
+                                ${item.checkins.slice(0,2).map(c => `<div class="w-7 h-7 rounded-full bg-stone-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-stone-600">${c.initials}</div>`).join('')}
+                                <div class="w-7 h-7 rounded-full bg-stone-50 border-2 border-white flex items-center justify-center text-[8px] font-bold text-stone-400">+${Math.floor(Math.random()*15)+5}</div>
                             </div>
-                            <button class="text-primary font-bold text-sm hover:underline">${appMode === 'party' ? 'Tenho Interesse' : 'Ver Detalhes'}</button>
+                            <div class="flex gap-2">
+                                <button class="p-2 text-stone-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">bookmark</span></button>
+                                <button class="text-primary font-bold text-sm hover:underline">Ver Detalhes</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -595,7 +676,6 @@
         btn.addEventListener('click', () => {
             document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('chip-active'));
             btn.classList.add('chip-active');
-            selectedMood = btn.dataset.mood;
         });
     });
 
@@ -603,12 +683,9 @@
         btn.addEventListener('click', () => {
             document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('chip-active'));
             btn.classList.add('chip-active');
-            selectedBudget = btn.dataset.budget;
         });
     });
 
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 </script>
-</body></html>
+```</body></html>
