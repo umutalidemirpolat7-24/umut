@@ -1,4 +1,6 @@
-<html class="scroll-smooth" lang="pt-BR"><head>
+<html class="scroll-smooth" lang="pt-BR"><head></head><body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">```html
+
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Rio Concierge | Descoberta de Encontros Curados</title>
@@ -82,7 +84,6 @@
             font-weight: bold;
         }
     </style>
-</head><body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
 <nav class="fixed top-0 w-full z-[60] bg-[#FCF9F5] border-b border-stone-200">
 <div class="flex justify-between items-center h-20 px-10 max-w-7xl mx-auto">
 <div class="font-serif italic font-bold text-2xl text-[#6B1D23] tracking-tight cursor-pointer" onclick="showView('home')">
@@ -342,6 +343,149 @@
 
     const seedPlaces = [
         { 
+            id: "cristo", 
+            name: "Cristo Redentor", 
+            district: "Flamengo / Catete", 
+            type: "Vista Panorâmica", 
+            moods: ["com_vista", "romantico", "cultural", "espontaneo"], 
+            budget: "medio", 
+            energy: "Majestosa", 
+            shortDesc: "Uma das sete maravilhas do mundo moderno, oferecendo a vista mais icônica do Rio.", 
+            img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=2070", 
+            highlights: ["Vista 360º", "Histórico", "Ícone Mundial"], 
+            priorityScore: 10,
+            audienceFit: "culture_date",
+            checkins: [{ initials: "RJ", desc: 'Visitante, "inesquecível"' }],
+            comments: ["O visual é de tirar o fôlego."],
+            recent: "Ponto turístico mais visitado hoje",
+            meetups: []
+        },
+        { 
+            id: "bondinho", 
+            name: "Parque Bondinho Pão de Açúcar", 
+            district: "Botafogo / Urca", 
+            type: "Vista Panorâmica", 
+            moods: ["com_vista", "romantico", "cultural", "espontaneo"], 
+            budget: "medio", 
+            energy: "Mágica", 
+            shortDesc: "Passeio clássico com vistas deslumbrantes da cidade, ideal para o pôr do sol.", 
+            img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070", 
+            highlights: ["Pôr do Sol", "Teleférico", "Vista da Baía"], 
+            priorityScore: 10,
+            audienceFit: "culture_date",
+            checkins: [{ initials: "CM", desc: 'Carlos, 29, "Pôr do sol incrível"' }],
+            comments: ["Sempre uma boa ideia para impressionar."],
+            recent: "12 check-ins hoje",
+            meetups: []
+        },
+        { 
+            id: "10_e_meio", 
+            name: "10 e Meio Beach Club", 
+            district: "Barra / Recreio / Joá", 
+            type: "Beach Club", 
+            moods: ["divertido", "espontaneo", "com_vista", "viral"], 
+            budget: "medio_alto", 
+            energy: "Vibrante", 
+            shortDesc: "Pé na areia com sofisticação e música boa no Recreio.", 
+            img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070", 
+            highlights: ["Beira-mar", "Drinks", "DJ Set"], 
+            priorityScore: 8,
+            viralTag: "trending",
+            checkins: [{ initials: "LB", desc: 'Lucas, 25, "vibe top"' }],
+            comments: ["Melhor sunset da Barra."],
+            recent: "Bombando nas redes sociais",
+            meetups: []
+        },
+        { 
+            id: "classico_beach", 
+            name: "Clássico Beach Club", 
+            district: "Barra / Recreio / Joá", 
+            type: "Beach Club", 
+            moods: ["romantico", "com_vista", "espontaneo", "viral"], 
+            budget: "medio", 
+            energy: "Chill & Chic", 
+            shortDesc: "O point perfeito para quem busca boa gastronomia e visual paradisíaco.", 
+            img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070", 
+            highlights: ["Gastronomia", "Vista Mar", "Sunset"], 
+            priorityScore: 9,
+            viralTag: "trending",
+            checkins: [{ initials: "AN", desc: 'Ana, 30, "lugar lindo"' }],
+            comments: ["Comida excelente e vista melhor ainda."],
+            recent: "Favorito dos locais",
+            meetups: []
+        },
+        { 
+            id: "rio_beach", 
+            name: "Rio Beach Club", 
+            district: "Barra / Recreio / Joá", 
+            type: "Beach Club", 
+            moods: ["divertido", "espontaneo", "viral", "com_vista"], 
+            budget: "medio_alto", 
+            energy: "Exclusiva", 
+            shortDesc: "Um oásis na Ilha da Coroa com piscina e deck privativo.", 
+            img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2070", 
+            highlights: ["Piscina", "Exclusividade", "Vista Canal"], 
+            priorityScore: 8,
+            viralTag: "trending",
+            checkins: [{ initials: "GP", desc: 'Gabi, 27, "domingo perfeito"' }],
+            comments: ["Experiência de resort no Rio."],
+            recent: "Poucas vagas disponíveis",
+            meetups: []
+        },
+        { 
+            id: "pesqueiro", 
+            name: "Pesqueiro", 
+            district: "Barra / Recreio / Joá", 
+            type: "Restaurante Beach", 
+            moods: ["romantico", "com_vista", "espontaneo"], 
+            budget: "medio_alto", 
+            energy: "Sofisticada", 
+            shortDesc: "Referência em frutos do mar com uma varanda debruçada sobre o mar da Reserva.", 
+            img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1974", 
+            highlights: ["Frutos do Mar", "Frente Mar", "Carta de Vinhos"], 
+            priorityScore: 8,
+            audienceFit: "couple_core",
+            checkins: [{ initials: "MR", desc: 'Mauro, 40, "jantar excelente"' }],
+            comments: ["O melhor peixe da região."],
+            recent: "Recomendado para casais",
+            meetups: []
+        },
+        { 
+            id: "joatinga", 
+            name: "Praia da Joatinga", 
+            district: "Barra / Recreio / Joá", 
+            type: "Parque e Passeio", 
+            moods: ["com_vista", "romantico", "espontaneo", "economico"], 
+            budget: "economico", 
+            energy: "Selvagem & Bela", 
+            shortDesc: "Uma praia escondida e paradisíaca, acessível apenas na maré baixa.", 
+            img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070", 
+            highlights: ["Exclusiva", "Natureza", "Pôr do Sol"], 
+            priorityScore: 7,
+            viralTag: "trending",
+            checkins: [{ initials: "TH", desc: 'Tiago, 22, "melhor praia do Rio"' }],
+            comments: ["Lugar mágico, preservem a natureza."],
+            recent: "Check-in popular no Instagram",
+            meetups: []
+        },
+        { 
+            id: "gigoia", 
+            name: "Ilha da Gigóia", 
+            district: "Barra / Recreio / Joá", 
+            type: "Passeio Cultural", 
+            moods: ["calmo", "espontaneo", "cultural"], 
+            budget: "medio", 
+            energy: "Boêmia & Tranquila", 
+            shortDesc: "Um refúgio pantaneiro no meio da Barra, com ruelas charmosas e ótimos restaurantes.", 
+            img: "https://images.unsplash.com/photo-1596422846543-75c6fc18a5cf?q=80&w=2070", 
+            highlights: ["Passeio de Barco", "Gastronomia", "Escondido"], 
+            priorityScore: 7,
+            checkins: [{ initials: "FL", desc: 'Flavia, 33, "parece que saí do Rio"' }],
+            comments: ["Lugar super charmoso e relaxante."],
+            recent: "Descoberta urbana",
+            meetups: []
+        },
+        { 
             id: "tereze", 
             name: "Térèze", 
             district: "Santa Teresa", 
@@ -384,25 +528,6 @@
             meetups: []
         },
         { 
-            id: "murver", 
-            name: "Mürver", 
-            district: "Botafogo / Urca", 
-            type: "Contemporâneo", 
-            moods: ["romantico", "divertido"], 
-            budget: "premium", 
-            energy: "Moderna & Vibrante", 
-            shortDesc: "Gastronomia autoral em um ambiente intimista e moderno com drinks excepcionais.", 
-            img: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2070", 
-            highlights: ["Drinks Autorais", "Design Moderno", "Intimista"], 
-            reason: "Romântico + Botafogo + Premium. Um date sofisticado para paladares exigentes e clima envolvente.",
-            checkins: [
-                { initials: "DV", desc: 'Davi, 35, "melhor menu degustação"' }
-            ],
-            comments: ["Experiência gastronômica de primeira.", "Atendimento impecável."],
-            recent: "Reserva necessária",
-            meetups: []
-        },
-        { 
             id: "zaza", 
             name: "Zazá Bistrô", 
             district: "Ipanema / Leblon", 
@@ -424,25 +549,6 @@
             ]
         },
         { 
-            id: "bondinho", 
-            name: "Bondinho Pão de Açúcar", 
-            district: "Botafogo / Urca", 
-            type: "Passeio / Turístico", 
-            moods: ["divertido", "espontaneo"], 
-            budget: "medio", 
-            energy: "Turística & Alta", 
-            shortDesc: "Passeio clássico com vistas deslumbrantes da cidade, ideal para o pôr do sol e fotos inesquecíveis.", 
-            img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070", 
-            highlights: ["Vista Panorâmica", "Pôr do Sol", "Ícone Carioca"], 
-            reason: "Espontâneo + Urca + Médio. O visual lá de cima no fim da tarde cria um clima perfeito e inesquecível.",
-            checkins: [
-                { initials: "CM", desc: 'Carlos, 29, "Pôr do sol incrível"' }
-            ],
-            comments: ["Sempre uma boa ideia para impressionar.", "Vale cada centavo da subida."],
-            recent: "12 check-ins hoje",
-            meetups: []
-        },
-        { 
             id: "mam", 
             name: "MAM Rio", 
             district: "Centro / Lapa / Glória", 
@@ -462,7 +568,19 @@
             meetups: [
                 { title: "Passeio Cultural + Café", time: "Sábado, 15:00", host: "Grupo Arte Rio", goal: "Networking", vibe: "Tranquila", price: "Grátis", attendees: 15 }
             ]
-        }
+        },
+        { id: "cristo-redentor", name: "Cristo Redentor", district: "Flamengo / Catete", type: "vista", moods: ["com_vista", "romantico", "cultural"], budget: "medio", energy: "medio", viralTag: "standard", audienceFit: "culture_date", dateStyle: "vista", priorityScore: 10, shortDesc: "Cartão-postal clássico do Rio para um programa cênico e turístico a dois.", img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=2070" },
+        { id: "bondinho-pao-de-acucar", name: "Bondinho Pão de Açúcar", district: "Botafogo / Urca", type: "vista", moods: ["com_vista", "romantico", "cultural", "espontaneo"], budget: "medio", energy: "medio", viralTag: "standard", audienceFit: "culture_date", dateStyle: "vista", priorityScore: 10, shortDesc: "Um dos programas mais fortes do Rio para vista, pôr do sol e wow factor.", img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070" },
+        { id: "parque-lage", name: "Parque Lage", district: "Jardim Botânico / Gávea", type: "parque_passeio", moods: ["calmo", "romantico", "cultural", "economico"], budget: "economico", energy: "calmo", viralTag: "standard", audienceFit: "culture_date", dateStyle: "passeio", priorityScore: 9, shortDesc: "Parque icônico e fotogênico para passeio tranquilo a dois.", img: "https://images.unsplash.com/photo-1596422846543-75c6fc18a5cf?q=80&w=2070" },
+        { id: "mam-rio", name: "MAM Rio", district: "Flamengo / Catete", type: "museu_arte", moods: ["cultural", "calmo", "economico"], budget: "economico", energy: "calmo", viralTag: "standard", audienceFit: "culture_date", dateStyle: "cultura", priorityScore: 8, shortDesc: "Museu forte para casal que quer arte, calma e conversa.", img: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070" },
+        { id: "museu-do-amanha", name: "Museu do Amanhã", district: "Centro / Lapa / Glória", type: "museu_arte", moods: ["cultural", "com_vista", "espontaneo"], budget: "medio", energy: "medio", viralTag: "standard", audienceFit: "culture_date", dateStyle: "cultura", priorityScore: 8, shortDesc: "Museu muito visual e ótimo para um date cultural e fotogênico.", img: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070" },
+        { id: "feira-sao-cristovao", name: "Feira de São Cristóvão", district: "Centro / Lapa / Glória", type: "cultura", moods: ["divertido", "cultural", "espontaneo"], budget: "medio", energy: "animado", viralTag: "standard", audienceFit: "trending_social", dateStyle: "cultura", priorityScore: 8, shortDesc: "Comida, música e cultura nordestina para um date diferente e vivo.", img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070" },
+        { id: "classico-beach-club-barra", name: "Clássico Beach Club", district: "Barra / Recreio / Joá", type: "cafe_vista", moods: ["romantico", "com_vista", "espontaneo", "viral"], budget: "medio", energy: "medio", viralTag: "trending", audienceFit: "trending_social", dateStyle: "praia", priorityScore: 9, shortDesc: "Beach club pé na areia forte para sunset, drinks e date leve.", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070" },
+        { id: "pesqueiro-barra", name: "Pesqueiro", district: "Barra / Recreio / Joá", type: "restaurante", moods: ["romantico", "com_vista", "espontaneo"], budget: "medio_alto", energy: "medio", viralTag: "standard", audienceFit: "couple_core", dateStyle: "jantar", priorityScore: 8, shortDesc: "Restaurante com ares de beach club, forte para almoço tardio ou jantar à beira-mar.", img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1974" },
+        { id: "ocya-ilha", name: "Ocyá Ilha", district: "Barra / Recreio / Joá", type: "restaurante", moods: ["cultural", "romantico", "espontaneo"], budget: "medio_alto", energy: "calmo", viralTag: "standard", audienceFit: "couple_core", dateStyle: "jantar", priorityScore: 8, shortDesc: "Experiência gastronômica diferente e memorável na Ilha Primeira.", img: "https://images.unsplash.com/photo-1596422846543-75c6fc18a5cf?q=80&w=2070" },
+        { id: "rio-beach-club", name: "Rio Beach Club", district: "Barra / Recreio / Joá", type: "social_bar", moods: ["divertido", "espontaneo", "viral", "com_vista"], budget: "medio_alto", energy: "animado", viralTag: "trending", audienceFit: "trending_social", dateStyle: "praia", priorityScore: 8, shortDesc: "Piscina, day use e lifestyle forte para um date mais social.", img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2070" },
+        { id: "praia-barra", name: "Praia da Barra da Tijuca", district: "Barra / Recreio / Joá", type: "parque_passeio", moods: ["economico", "com_vista", "espontaneo", "romantico"], budget: "economico", energy: "medio", viralTag: "standard", audienceFit: "low_pressure", dateStyle: "praia", priorityScore: 7, shortDesc: "Praia ampla para caminhada, conversa e pôr do sol.", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070" },
+        { id: "praia-pepe", name: "Praia do Pepê", district: "Barra / Recreio / Joá", type: "parque_passeio", moods: ["com_vista", "espontaneo", "economico"], budget: "economico", energy: "medio", viralTag: "standard", audienceFit: "low_pressure", dateStyle: "praia", priorityScore: 7, shortDesc: "Faixa de praia forte para encontro ao ar livre, sunset e clima mais leve.", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070" }
     ];
 
     const partyData = [
@@ -576,228 +694,24 @@
         resultsArea.classList.remove('hidden');
         resultsArea.scrollIntoView({ behavior: 'smooth' });
         
-        let html = '';
-        
-        // Show first 3 items as default results
-        const itemsToShow = seedPlaces.slice(0, 3);
-        
-        itemsToShow.forEach(item => {
-            html += `
-                <div class="bg-white rounded-2xl shadow-sm border border-outline-variant overflow-hidden group hover:shadow-md transition-all flex flex-col">
-                    <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openModal('${item.id}')">
-                        <img alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${item.img}"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="font-h3 text-2xl">${item.name}</h3>
-                            <p class="text-xs opacity-90">${item.district}</p>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="px-2 py-1 bg-stone-100 text-stone-600 rounded text-[10px] font-bold uppercase tracking-widest">${item.type}</span>
-                        </div>
-                        <p class="font-body-md text-stone-600 text-sm mb-6 flex-1">${item.shortDesc}</p>
-                        <button class="w-full py-3 text-center border border-primary text-primary font-button rounded-xl hover:bg-primary hover:text-white transition-all font-semibold" onclick="openModal('${item.id}')">Ver Detalhes</button>
-                    </div>
-                </div>
-            `;
-        });
-        
-        resultsGrid.innerHTML = html;
-    }
+        const selectedMoods = Array.from(document.querySelectorAll('.mood-btn.chip-active')).map(btn => btn.dataset.mood);
+        const selectedBudget = document.querySelector('.budget-btn.chip-active')?.dataset.budget;
+        const selectedNeighborhood = document.getElementById('neighborhood-select').value;
+        const isViralOnly = document.getElementById('viral-toggle').checked;
 
-    function closeModal() { document.getElementById('details-modal').classList.add('hidden'); }
+        let results = appMode === 'planner' ? [...seedPlaces] : [...partyData];
 
-    function switchModalTab(tab) {
-        const detailsTab = document.getElementById('tab-details');
-        const meetupsTab = document.getElementById('tab-meetups');
-        const detailsContent = document.getElementById('content-details');
-        const meetupsContent = document.getElementById('content-meetups');
-
-        if(tab === 'details') {
-            detailsTab.classList.add('tab-active');
-            meetupsTab.classList.remove('tab-active');
-            detailsContent.classList.remove('hidden');
-            meetupsContent.classList.add('hidden');
-        } else {
-            meetupsTab.classList.add('tab-active');
-            detailsTab.classList.remove('tab-active');
-            meetupsContent.classList.remove('hidden');
-            detailsContent.classList.add('hidden');
-        }
-    }
-
-    function toggleHostForm() {
-        const form = document.getElementById('host-meetup-form');
-        form.classList.toggle('hidden');
-    }
-
-    function openModal(id) {
-        const data = appMode === 'planner' ? seedPlaces : partyData;
-        const item = data.find(p => p.id === id);
-        if(!item) return;
-
-        const modalContent = document.getElementById('modal-content');
-        const budgetLabel = item.budget === 'economico' ? 'Econômico' : (item.budget === 'medio' ? 'Médio' : (item.budget === 'medio_alto' ? 'Médio-Alto' : 'Premium'));
-
-        let meetupsHtml = '';
-        if (item.meetups && item.meetups.length > 0) {
-            meetupsHtml = item.meetups.map(m => `
-                <div class="border border-stone-200 rounded-xl p-5 mb-4 hover:border-primary transition-all bg-white">
-                    <div class="flex justify-between items-start mb-3">
-                        <h5 class="font-button font-bold text-lg text-primary">${m.title}</h5>
-                        <span class="text-xs font-bold bg-primary/10 text-primary px-2 py-1 rounded">${m.price}</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-y-2 text-sm text-stone-600 mb-4">
-                        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">schedule</span> ${m.time}</div>
-                        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">person</span> Host: ${m.host}</div>
-                        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">flag</span> ${m.goal}</div>
-                        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">music_note</span> ${m.vibe}</div>
-                    </div>
-                    <div class="flex items-center justify-between pt-3 border-t border-stone-100">
-                        <span class="text-xs text-stone-500">${m.attendees} pessoas confirmadas</span>
-                        <button class="text-primary font-bold text-sm hover:underline">Pedir para Participar</button>
-                    </div>
-                </div>
-            `).join('');
-        } else {
-            meetupsHtml = `
-                <div class="text-center py-12 bg-stone-50 rounded-2xl border border-stone-200 border-dashed">
-                    <span class="material-symbols-outlined text-4xl text-stone-300 mb-2">event_busy</span>
-                    <p class="text-stone-500 text-sm">Nenhum encontro marcado aqui ainda.</p>
-                    <p class="text-stone-400 text-xs mt-1">Seja o primeiro a organizar algo legal!</p>
-                </div>
-            `;
-        }
-
-        modalContent.innerHTML = `
-            <div class="relative h-64 md:h-80">
-                <img alt="${item.name}" class="w-full h-full object-cover" src="${item.img}"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <button class="absolute top-6 right-6 bg-black/40 hover:bg-black/60 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all z-10" onclick="closeModal()">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-                <div class="absolute bottom-6 left-8 right-8 text-white">
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="px-2 py-1 bg-primary text-white rounded text-[10px] font-bold uppercase tracking-widest">${item.type}</span>
-                        <span class="px-2 py-1 bg-white/20 backdrop-blur rounded text-[10px] font-bold uppercase tracking-widest">${item.energy}</span>
-                    </div>
-                    <h3 class="font-h2 text-4xl mb-1">${item.name}</h3>
-                    <div class="flex items-center gap-3 text-sm opacity-90 font-button">
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> ${item.district}</span>
-                        <span>•</span>
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span> ${budgetLabel}</span>
-                    </div>
-                </div>
-            </div>
+        // Scoring & Filtering
+        results = results.map(item => {
+            let score = item.priorityScore || 0;
             
-            <div class="flex border-b border-stone-200 px-8 pt-4 bg-stone-50/50">
-                <button id="tab-details" class="px-6 py-4 font-button text-sm text-stone-500 hover:text-primary transition-colors tab-active" onclick="switchModalTab('details')">Sobre o Local</button>
-                <button id="tab-meetups" class="px-6 py-4 font-button text-sm text-stone-500 hover:text-primary transition-colors" onclick="switchModalTab('meetups')">Encontros Neste Lugar</button>
-            </div>
+            // Mood matching
+            const matchCount = selectedMoods.filter(m => item.moods.includes(m)).length;
+            score += matchCount * 5;
 
-            <div class="p-8 md:p-10 max-h-[60vh] overflow-y-auto">
-                <!-- Details Tab -->
-                <div id="content-details">
-                    <div class="flex justify-end mb-6 gap-3">
-                        <button class="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-100 text-stone-500 transition-all"><span class="material-symbols-outlined text-[20px]">bookmark</span></button>
-                        <button class="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-100 text-stone-500 transition-all"><span class="material-symbols-outlined text-[20px]">share</span></button>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-10">
-                        <div class="md:col-span-2 space-y-8">
-                            <div class="bg-primary/5 rounded-2xl p-6 border-l-4 border-primary">
-                                <h4 class="font-button text-primary font-bold text-sm mb-2 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-[18px]">auto_awesome</span> Por que combina com você?
-                                </h4>
-                                <p class="font-body-md text-stone-700 text-sm leading-relaxed">${item.reason || item.shortDesc}</p>
-                            </div>
-                            
-                            <div>
-                                <h4 class="font-label-caps text-xs text-stone-400 mb-3 uppercase tracking-widest font-bold">A Experiência</h4>
-                                <p class="font-body-md text-stone-600 text-sm leading-relaxed">${item.shortDesc}</p>
-                            </div>
-
-                            <div>
-                                <h4 class="font-label-caps text-xs text-stone-400 mb-3 uppercase tracking-widest font-bold">Destaques para Casais</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    ${item.highlights.map(h => `<span class="px-3 py-1 bg-stone-100 text-stone-600 rounded-full text-xs font-semibold">${h}</span>`).join('')}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="space-y-6">
-                            <div class="bg-stone-50 rounded-2xl p-5 border border-stone-100">
-                                <h4 class="font-label-caps text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Movimento Agora</h4>
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="flex -space-x-2">
-                                        ${item.checkins.map(c => `<div class="w-8 h-8 rounded-full bg-stone-200 border-2 border-white flex items-center justify-center text-xs font-bold text-stone-600" title='${c.desc}'>${c.initials}</div>`).join('')}
-                                    </div>
-                                    <span class="text-xs text-stone-500 font-medium">${item.recent}</span>
-                                </div>
-                                <button class="w-full bg-primary text-white py-3 rounded-xl text-sm font-button hover:opacity-90 shadow-md transition-all flex items-center justify-center gap-2">
-                                    <span class="material-symbols-outlined text-[18px]">how_to_reg</span> Fazer Check-in
-                                </button>
-                            </div>
-                            
-                            <div>
-                                <h4 class="font-label-caps text-xs text-stone-400 mb-3 uppercase tracking-widest font-bold">Comentários Recentes</h4>
-                                <div class="space-y-3">
-                                    ${item.comments.map(comment => `<p class="text-xs text-stone-500 italic border-l-2 border-stone-200 pl-3">"${comment}"</p>`).join('')}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Meetups Tab -->
-                <div id="content-meetups" class="hidden">
-                    <div class="flex justify-between items-center mb-6">
-                        <h4 class="font-h3 text-2xl text-stone-800">Encontros Planejados</h4>
-                        <button class="bg-stone-100 text-stone-700 px-4 py-2 rounded-lg text-sm font-button font-semibold hover:bg-stone-200 transition-all flex items-center gap-2" onclick="toggleHostForm()">
-                            <span class="material-symbols-outlined text-[18px]">add</span> Criar encontro neste lugar
-                        </button>
-                    </div>
-
-                    <!-- Hidden Form -->
-                    <div id="host-meetup-form" class="hidden bg-stone-50 rounded-2xl p-6 border border-stone-200 mb-8">
-                        <h5 class="font-button font-bold text-primary mb-4">Criar Novo Encontro</h5>
-                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Encontro criado com sucesso!'); toggleHostForm();">
-                            <div class="space-y-1">
-                                <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Nome do Evento</label>
-                                <input class="w-full border-stone-300 rounded-lg py-2 text-sm focus:ring-primary focus:border-primary" type="text" placeholder="Ex: Jantar de Networking..."/>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="space-y-1">
-                                    <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Data e Hora</label>
-                                    <input class="w-full border-stone-300 rounded-lg py-2 text-sm focus:ring-primary focus:border-primary" type="datetime-local"/>
-                                </div>
-                                <div class="space-y-1">
-                                    <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Vagas</label>
-                                    <input class="w-full border-stone-300 rounded-lg py-2 text-sm focus:ring-primary focus:border-primary" type="number" min="2" max="20" value="4"/>
-                                </div>
-                            </div>
-                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-xl font-button hover:opacity-90 transition-all mt-4">Publicar Encontro</button>
-                        </form>
-                    </div>
-
-                    ${meetupsHtml}
-                </div>
-            </div>
-        `;
-        document.getElementById('details-modal').classList.remove('hidden');
-    }
-
-    function scrollToTop() {
-        document.getElementById('planner').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function showView(viewName) {
-        document.getElementById('view-home').classList.add('hidden');
-        document.getElementById('view-chats').classList.add('hidden');
-        
-        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-link-active'));
-        
-        document.getElementById(`view-${viewName}`).classList.remove('hidden');
-        document.querySelector(`.${viewName}-nav`).classList.add('nav-link-active');
-    }
-</script></body></html>
+            // Apply mood-specific score bonuses
+            if (selectedMoods.includes("romantico") && ["tereze", "aprazivel", "zaza", "marine-resto", "cristo", "bondinho", "mee", "cristo-redentor", "bondinho-pao-de-acucar"].includes(item.id)) score += 3;
+            if (selectedMoods.includes("calmo") && ["parque-lage", "mam-rio", "tereze", "coffee-five", "praia-barra", "jardim-botanico"].includes(item.id)) score += 3;
+            if (selectedMoods.includes("divertido") && ["rio-beach-club", "feira-sao-cristovao", "111-music-bar", "cazota-bar", "ophelia"].includes(item.id)) score += 3;
+            if (selectedMoods.includes("espontaneo") && ["classico_beach", "classico-beach-club-barra", "rio_beach", "rio-beach-club", "bondinho", "bondinho-pao-de-acucar", "praia-barra", "praia-pepe", "ocya-ilha", "ophelia"].includes(item.id)) score += 3;
+            if (selectedMoods.includes("com_vista") && ["cristo", "cristo-redentor", "bondinho", "bondinho-pao-de-acucar", "marine-resto", "aprazivel", "classico_beach", "classico-beach-club-</script></body></html>
